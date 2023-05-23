@@ -125,16 +125,22 @@ const typeConverter = (param, reference) => {
     param.isNullable = false;
     param.schema = [
       {
-        name: 'filename',
-        type: 'string'
-      },
-      {
-        name: 'description',
-        type: 'string'
-      },
-      {
-        name: 'file',
-        type: 'buffer'
+        name: 'attachment',
+        type: 'object',
+        schema: [
+          {
+            name: 'filename',
+            type: 'string'
+          },
+          {
+            name: 'description',
+            type: 'string'
+          },
+          {
+            name: 'file',
+            type: 'buffer'
+          }
+        ]
       }
     ];
   } else {

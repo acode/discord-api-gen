@@ -72,20 +72,21 @@ function getProperEndpointName (namespace, title, method, path) {
     .slice(1)
     .concat(action).join('/')
     .replace(/\/+/gi, '/') // get rid of double slashes
-  
+
   if (name.startsWith('applications/')) {
     name = name.split('/').slice(1).join('/');
   }
-  
+
   return name;
 }
 
 module.exports = async (endpoints) => {
-  
+
   let names = [];
-  
+
   return endpoints
     .map(endpoint => {
+
       let name = getProperEndpointName(
         endpoint.namespace,
         endpoint.title,
@@ -100,7 +101,27 @@ module.exports = async (endpoints) => {
       }
       names[name] = endpoint.url;
       endpoint.name = name;
+
+      endpoint.supports_multipart = !!endpoint.jsonParams.find(param => param.name === 'payload_json');
+      if (endpoint.supports_multipart) {
+        let filesParam = endpoint.jsonParams
+          .find(param => param.name === 'files');
+        let attachmentsParam = endpoint.jsonParams
+          .find(param => param.name === 'attachments');
+        attachmentsParam.schema = filesParam.schema;
+        endpoint.jsonParams = endpoint.jsonParams
+          .filter(param => ['files', 'payload_json'].indexOf(param.name) === -1);
+        if (endpoint.method === 'PATCH') {
+          endpoint.jsonParams = endpoint.jsonParams.map(param => {
+            param.optional = true;
+            param.isNullable = true;
+            return param;
+          });
+        }
+      }
+
       return endpoint;
+
     });
-  
+
 };

@@ -24,7 +24,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -121,7 +122,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -147,7 +149,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -243,7 +246,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -269,7 +273,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -288,7 +293,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -322,7 +328,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -419,7 +426,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -452,7 +460,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -548,7 +557,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -581,7 +591,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -607,7 +618,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -633,7 +645,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -666,7 +679,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -713,7 +727,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "commands",
@@ -739,7 +754,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -765,7 +781,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -791,7 +808,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -817,7 +835,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -843,7 +862,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -869,7 +889,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -902,7 +923,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -935,7 +957,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "interactions",
@@ -968,7 +991,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "application_role_connection_metadata",
@@ -987,7 +1011,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "application_role_connection_metadata",
@@ -1006,7 +1031,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "audit_logs",
@@ -1061,7 +1087,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "auto_moderation",
@@ -1080,7 +1107,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "auto_moderation",
@@ -1106,7 +1134,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "auto_moderation",
@@ -1198,7 +1227,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "auto_moderation",
@@ -1290,7 +1320,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "auto_moderation",
@@ -1316,7 +1347,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1335,7 +1367,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1354,7 +1387,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1373,7 +1407,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1425,7 +1460,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1451,7 +1487,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1548,34 +1585,6 @@
         ]
       },
       {
-        "name": "files",
-        "type": "array",
-        "description": "Contents of the file being sent\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
-        "optional": true,
-        "isNullable": false,
-        "schema": [
-          {
-            "name": "filename",
-            "type": "string"
-          },
-          {
-            "name": "description",
-            "type": "string"
-          },
-          {
-            "name": "file",
-            "type": "buffer"
-          }
-        ]
-      },
-      {
-        "name": "payload_json",
-        "type": "string",
-        "description": "JSON-encoded body of non-file params, only for `multipart/form-data` requests\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
-        "optional": true,
-        "isNullable": false
-      },
-      {
         "name": "attachments",
         "type": "array",
         "description": "Attachment objects with filename and description\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
@@ -1583,8 +1592,22 @@
         "isNullable": false,
         "schema": [
           {
+            "name": "attachment",
             "type": "object",
-            "partial_object_reference": "attachment"
+            "schema": [
+              {
+                "name": "filename",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "file",
+                "type": "buffer"
+              }
+            ]
           }
         ]
       },
@@ -1595,7 +1618,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": true
   },
   {
     "namespace": "channels",
@@ -1621,7 +1645,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1654,7 +1679,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1687,7 +1713,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1727,7 +1754,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1777,7 +1805,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1803,7 +1832,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1836,7 +1866,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -1867,15 +1898,15 @@
         "name": "content",
         "type": "string",
         "description": "Message contents (up to 2000 characters)",
-        "optional": false,
-        "isNullable": false
+        "optional": true,
+        "isNullable": true
       },
       {
         "name": "embeds",
         "type": "array",
         "description": "Up to 10 `rich` embeds (up to 6000 characters)",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
             "type": "object",
@@ -1887,23 +1918,23 @@
         "name": "flags",
         "type": "integer",
         "description": "Edit the [flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) of a message (only `SUPPRESS_EMBEDS` can currently be set/unset)",
-        "optional": false,
-        "isNullable": false
+        "optional": true,
+        "isNullable": true
       },
       {
         "name": "allowed_mentions",
         "type": "object",
         "description": "Allowed mentions for the message",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "object_reference": "allowed_mention"
       },
       {
         "name": "components",
         "type": "array",
         "description": "Components to include with the message",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
             "type": "object",
@@ -1913,47 +1944,34 @@
         ]
       },
       {
-        "name": "files",
-        "type": "array",
-        "description": "Contents of the file being sent/edited\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
-        "optional": true,
-        "isNullable": false,
-        "schema": [
-          {
-            "name": "filename",
-            "type": "string"
-          },
-          {
-            "name": "description",
-            "type": "string"
-          },
-          {
-            "name": "file",
-            "type": "buffer"
-          }
-        ]
-      },
-      {
-        "name": "payload_json",
-        "type": "string",
-        "description": "JSON-encoded body of non-file params (multipart/form-data only)\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
-        "optional": false,
-        "isNullable": false
-      },
-      {
         "name": "attachments",
         "type": "array",
         "description": "Attached files to keep and possible descriptions for new files\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
+            "name": "attachment",
             "type": "object",
-            "object_reference": "attachment"
+            "schema": [
+              {
+                "name": "filename",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "file",
+                "type": "buffer"
+              }
+            ]
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": true
   },
   {
     "namespace": "channels",
@@ -1979,7 +1997,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2011,7 +2030,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2059,7 +2079,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2078,7 +2099,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2151,7 +2173,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2177,7 +2200,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2204,7 +2228,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2223,7 +2248,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2242,7 +2268,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2268,7 +2295,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2294,7 +2322,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2335,7 +2364,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2361,7 +2391,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2409,7 +2440,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2464,7 +2496,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2525,7 +2558,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2544,7 +2578,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2570,7 +2605,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2589,7 +2625,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2615,7 +2652,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2649,7 +2687,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2690,7 +2729,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2724,7 +2764,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2758,7 +2799,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "channels",
@@ -2792,7 +2834,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "emojis",
@@ -2811,7 +2854,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "emojis",
@@ -2837,7 +2881,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "emojis",
@@ -2884,7 +2929,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "emojis",
@@ -2930,7 +2976,8 @@
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "emojis",
@@ -2956,7 +3003,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3065,7 +3113,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3093,7 +3142,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3112,7 +3162,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3289,7 +3340,8 @@
         "optional": false,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3308,7 +3360,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3327,7 +3380,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3488,7 +3542,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3507,7 +3562,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3526,7 +3582,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3552,7 +3609,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3588,7 +3646,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3623,7 +3682,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3694,7 +3754,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3774,7 +3835,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3802,7 +3864,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3830,7 +3893,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3863,7 +3927,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3896,7 +3961,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3922,7 +3988,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3966,7 +4033,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -3992,7 +4060,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4035,7 +4104,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4061,7 +4131,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4080,7 +4151,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4157,7 +4229,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4176,7 +4249,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4253,7 +4327,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4280,7 +4355,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4306,7 +4382,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4342,7 +4419,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4398,7 +4476,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4417,7 +4496,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4436,7 +4516,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4455,7 +4536,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4481,7 +4563,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4500,7 +4583,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4519,7 +4603,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4538,7 +4623,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4557,7 +4643,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4585,7 +4672,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4604,7 +4692,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4651,7 +4740,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4670,7 +4760,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4711,7 +4802,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guilds",
@@ -4752,7 +4844,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4779,7 +4872,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4866,7 +4960,8 @@
         "isNullable": false,
         "object_reference": "image_data"
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4900,7 +4995,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5002,7 +5098,8 @@
         "isNullable": false,
         "object_reference": "image_data"
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5028,7 +5125,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5087,7 +5185,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5106,7 +5205,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5141,7 +5241,8 @@
         "isNullable": false,
         "object_reference": "image_data"
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5160,7 +5261,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5194,7 +5296,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5220,7 +5323,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5261,7 +5365,8 @@
         "optional": true,
         "isNullable": true
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "guild_templates",
@@ -5287,7 +5392,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "invites",
@@ -5328,7 +5434,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "invites",
@@ -5347,7 +5454,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stage_instances",
@@ -5387,7 +5495,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "stage_instances",
@@ -5406,7 +5515,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stage_instances",
@@ -5440,7 +5550,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "stage_instances",
@@ -5459,7 +5570,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5478,7 +5590,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5489,7 +5602,8 @@
     "description": "Returns the list of sticker packs available to Nitro subscribers.",
     "pathParams": [],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5508,7 +5622,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5534,7 +5649,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5553,7 +5669,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5601,7 +5718,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "stickers",
@@ -5627,7 +5745,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5638,7 +5757,8 @@
     "description": "Returns the [user](https://discord.com/developers/docs/resources/user#user-object) object of the requester's account\nFor OAuth2, this requires the `identify` scope, which will return the object _without_ an email, and optionally the `email` scope, which returns the object _with_ an email.",
     "pathParams": [],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5657,7 +5777,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5684,7 +5805,8 @@
         "isNullable": true,
         "object_reference": "image_data"
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5695,7 +5817,8 @@
     "description": "Returns a list of partial [guild](https://discord.com/developers/docs/resources/guild#guild-object) objects the current user is a member of\nRequires the `guilds` OAuth2 scope.",
     "pathParams": [],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5714,7 +5837,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5733,7 +5857,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5752,7 +5877,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5783,7 +5909,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5794,7 +5921,8 @@
     "description": "Returns a list of [connection](https://discord.com/developers/docs/resources/user#connection-object) objects\nRequires the `connections` OAuth2 scope.",
     "pathParams": [],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5813,7 +5941,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "users",
@@ -5854,7 +5983,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "voice",
@@ -5865,7 +5995,8 @@
     "description": "",
     "pathParams": [],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -5884,7 +6015,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -5903,7 +6035,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -5922,7 +6055,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -5941,7 +6075,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -5967,7 +6102,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6009,7 +6145,8 @@
         "optional": false,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6035,7 +6172,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6054,7 +6192,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6080,7 +6219,8 @@
       }
     ],
     "queryParams": [],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6186,34 +6326,6 @@
         ]
       },
       {
-        "name": "files",
-        "type": "array",
-        "description": "The contents of the file being sent",
-        "optional": true,
-        "isNullable": false,
-        "schema": [
-          {
-            "name": "filename",
-            "type": "string"
-          },
-          {
-            "name": "description",
-            "type": "string"
-          },
-          {
-            "name": "file",
-            "type": "buffer"
-          }
-        ]
-      },
-      {
-        "name": "payload_json",
-        "type": "string",
-        "description": "JSON encoded body of non-file params",
-        "optional": true,
-        "isNullable": false
-      },
-      {
         "name": "attachments",
         "type": "array",
         "description": "Attachment objects with filename and description",
@@ -6221,8 +6333,22 @@
         "isNullable": false,
         "schema": [
           {
+            "name": "attachment",
             "type": "object",
-            "partial_object_reference": "attachment"
+            "schema": [
+              {
+                "name": "filename",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "file",
+                "type": "buffer"
+              }
+            ]
           }
         ]
       },
@@ -6240,7 +6366,8 @@
         "optional": true,
         "isNullable": false
       }
-    ]
+    ],
+    "supports_multipart": true
   },
   {
     "namespace": "webhooks",
@@ -6281,7 +6408,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6322,7 +6450,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6363,7 +6492,8 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   },
   {
     "namespace": "webhooks",
@@ -6409,15 +6539,15 @@
         "name": "content",
         "type": "string",
         "description": "The message contents (up to 2000 characters)",
-        "optional": false,
-        "isNullable": false
+        "optional": true,
+        "isNullable": true
       },
       {
         "name": "embeds",
         "type": "array",
         "description": "Embedded `rich` content",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
             "type": "object",
@@ -6429,16 +6559,16 @@
         "name": "allowed_mentions",
         "type": "object",
         "description": "Allowed mentions for the message",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "object_reference": "allowed_mention"
       },
       {
         "name": "components",
         "type": "array",
         "description": "The components to include with the message",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
             "type": "object",
@@ -6448,47 +6578,34 @@
         ]
       },
       {
-        "name": "files",
-        "type": "array",
-        "description": "The contents of the file being sent/edited",
-        "optional": true,
-        "isNullable": false,
-        "schema": [
-          {
-            "name": "filename",
-            "type": "string"
-          },
-          {
-            "name": "description",
-            "type": "string"
-          },
-          {
-            "name": "file",
-            "type": "buffer"
-          }
-        ]
-      },
-      {
-        "name": "payload_json",
-        "type": "string",
-        "description": "JSON encoded body of non-file params (multipart/form-data only)",
-        "optional": false,
-        "isNullable": false
-      },
-      {
         "name": "attachments",
         "type": "array",
         "description": "Attached files to keep and possible descriptions for new files",
-        "optional": false,
-        "isNullable": false,
+        "optional": true,
+        "isNullable": true,
         "schema": [
           {
+            "name": "attachment",
             "type": "object",
-            "partial_object_reference": "attachment"
+            "schema": [
+              {
+                "name": "filename",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "file",
+                "type": "buffer"
+              }
+            ]
           }
         ]
       }
-    ]
+    ],
+    "supports_multipart": true
   },
   {
     "namespace": "webhooks",
@@ -6529,6 +6646,7 @@
         "isNullable": false
       }
     ],
-    "jsonParams": []
+    "jsonParams": [],
+    "supports_multipart": false
   }
 ]
