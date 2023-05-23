@@ -1,0 +1,7 @@
+{
+  "name": "keith/discord-api-gen",
+  "timeout": 280000,
+  "connector": false,
+  "events": {},
+  "memory": 1024
+}
