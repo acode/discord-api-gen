@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Guild Sticker
+ * Returns a [sticker](https://discord.com/developers/docs/resources/sticker#sticker-object) object for the given guild and sticker IDs
+ * Includes the `user` field if the bot has the `MANAGE_GUILD_EXPRESSIONS` permission.
+ * @param {string} guild_id Guild id
+ * @param {string} sticker_id [id of the sticker](https://discord.com/developers/docs/reference#image-formatting)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, sticker_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/stickers/{sticker_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (sticker_id !== null) { _pathParams['sticker_id'] = sticker_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Guild Bans
+ * Returns a list of [ban](https://discord.com/developers/docs/resources/guild#ban-object) objects for the users banned from this guild
+ * Requires the `BAN_MEMBERS` permission.
+ * @param {string} guild_id Guild id
+ * @param {float} limit Number of users to return (up to maximum 1000)
+ * @param {string} before Consider only users before given user id
+ * @param {string} after Consider only users after given user id
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, limit = null, before = null, after = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/bans';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +40,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (limit !== null) { _queryParams['limit'] = limit; }
+  if (before !== null) { _queryParams['before'] = before; }
+  if (after !== null) { _queryParams['after'] = after; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

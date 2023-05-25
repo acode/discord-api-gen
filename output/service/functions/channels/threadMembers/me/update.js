@@ -1,13 +1,17 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Join Thread
+ * Adds the current user to a thread
+ * Also requires the thread is not archived. Returns a 204 empty response on success. Fires a [Thread Members Update](https://discord.com/developers/docs/topics/gateway-events#thread-members-update) and a [Thread Create](https://discord.com/developers/docs/topics/gateway-events#thread-create) Gateway event.
+ * @param {string} channel_id The id of the channel
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/channels/{channel_id}/thread-members/@me';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +19,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +37,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

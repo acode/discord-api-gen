@@ -1,13 +1,16 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * List Guild Emojis
+ * Returns a list of [emoji](https://discord.com/developers/docs/resources/emoji#emoji-object) objects for the given guild.
+ * @param {string} guild_id Guild id
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/emojis';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +18,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +36,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

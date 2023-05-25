@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Create Guild Ban
+ * Create a guild ban, and optionally delete previous messages sent by the banned user
+ * Requires the `BAN_MEMBERS` permission. Returns a 204 empty response on success. Fires a [Guild Ban Add](https://discord.com/developers/docs/topics/gateway-events#guild-ban-add) Gateway event.
+ * @param {string} guild_id Guild id
+ * @param {string} user_id The user's id
+ * @param {integer} delete_message_days Number of days to delete messages for (0-7) (deprecated)
+ * @param {integer} delete_message_seconds Number of seconds to delete messages for, between 0 and 604800 (7 days)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, user_id, delete_message_days = null, delete_message_seconds = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/guilds/{guild_id}/bans/{user_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (user_id !== null) { _pathParams['user_id'] = user_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +41,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (delete_message_days !== null) { _bodyParams['delete_message_days'] = delete_message_days; }
+  if (delete_message_seconds !== null) { _bodyParams['delete_message_seconds'] = delete_message_seconds; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

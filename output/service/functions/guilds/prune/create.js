@@ -1,13 +1,23 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Begin Guild Prune
+ * Begin a prune operation
+ * Requires the `KICK_MEMBERS` permission. Returns an object with one `pruned` key indicating the number of members that were removed in the prune operation. For large guilds it's recommended to set the `compute_prune_count` option to `false`, forcing `pruned` to `null`. Fires multiple [Guild Member Remove](https://discord.com/developers/docs/topics/gateway-events#guild-member-remove) Gateway events.
+ * 
+ * By default, prune will not remove users with roles. You can optionally include specific roles in your prune by providing the `include_roles` parameter. Any inactive user that has a subset of the provided role(s) will be included in the prune and users with additional roles will not.
+ * @param {string} guild_id Guild id
+ * @param {integer} days Number of days to prune (1-30)
+ * @param {boolean} compute_prune_count Whether `pruned` is returned, discouraged for large guilds
+ * @param {array} include_roles Role(s) to include, *  * @ {string} undefined 
+ * @param {string} reason Reason for the prune (deprecated)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, days, compute_prune_count, include_roles, reason = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/guilds/{guild_id}/prune';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +25,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +43,12 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (days !== null) { _bodyParams['days'] = days; }
+  if (compute_prune_count !== null) { _bodyParams['compute_prune_count'] = compute_prune_count; }
+  if (include_roles !== null) { _bodyParams['include_roles'] = include_roles; }
+  if (reason !== null) { _bodyParams['reason'] = reason; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

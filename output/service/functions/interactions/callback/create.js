@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Create Interaction Response
+ * Create a response to an Interaction from the gateway
+ * Body is an [interaction response](https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object). Returns `204 No Content`.
+ * 
+ * This endpoint also supports file attachments similar to the webhook endpoints. Refer to [Uploading Files](https://discord.com/developers/docs/reference#uploading-files) for details on uploading files and `multipart/form-data` requests.
+ * @param {string} interaction_id ID of the interaction
+ * @param {string} interaction_token Continuation token for responding to the interaction
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (interaction_id, interaction_token) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/interactions/{interaction_id}/{interaction_token}/callback';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (interaction_id !== null) { _pathParams['interaction_id'] = interaction_id; }
+  if (interaction_token !== null) { _pathParams['interaction_token'] = interaction_token; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +41,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

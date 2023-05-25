@@ -1,13 +1,21 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * List Thread Members
+ * Returns array of [thread members](https://discord.com/developers/docs/resources/channel#thread-member-object) objects that are members of the thread.
+ * 
+ * When `with_member` is set to `true`, the results will be paginated and each thread member object will include a `member` field containing a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object.
+ * @param {string} channel_id The id of the channel
+ * @param {boolean} with_member Whether to include a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object for each thread member
+ * @param {string} after Get thread members after this user ID
+ * @param {integer} limit Max number of thread members to return (1-100), * Defaults to 100.
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id, with_member = null, after = null, limit = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/channels/{channel_id}/thread-members';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +23,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +41,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (with_member !== null) { _queryParams['with_member'] = with_member; }
+  if (after !== null) { _queryParams['after'] = after; }
+  if (limit !== null) { _queryParams['limit'] = limit; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

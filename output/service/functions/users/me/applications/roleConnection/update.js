@@ -1,13 +1,19 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Update User Application Role Connection
+ * Updates and returns the [application role connection](https://discord.com/developers/docs/resources/user#application-role-connection-object) for the user
+ * Requires an OAuth2 access token with `role_connections.write` scope for the application specified in the path.
+ * @param {string} platform_name The vanity name of the platform a bot has connected (max 50 characters)
+ * @param {string} platform_username The username on the platform a bot has connected (max 100 characters)
+ * @param {object} metadata Object mapping [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) keys to their `string`-ified value (max 100 characters) for the user on the platform a bot has connected
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (platform_name = null, platform_username = null, metadata = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/users/@me/applications/{application_id}/role-connection';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +21,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (platform_name !== null) { _bodyParams['platform_name'] = platform_name; }
+  if (platform_username !== null) { _bodyParams['platform_username'] = platform_username; }
+  if (metadata !== null) { _bodyParams['metadata'] = metadata; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

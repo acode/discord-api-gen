@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Modify Current User
+ * Modify the requester's user account settings
+ * Returns a [user](https://discord.com/developers/docs/resources/user#user-object) object on success. Fires a [User Update](https://discord.com/developers/docs/topics/gateway-events#user-update) Gateway event.
+ * @param {string} username User's username, if changed may cause the user's discriminator to be randomized.
+ * @param {object} avatar If passed, modifies the user's avatar
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (username, avatar) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PATCH';
+  let _pathname = '/users/@me';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +38,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (username !== null) { _bodyParams['username'] = username; }
+  if (avatar !== null) { _bodyParams['avatar'] = avatar; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

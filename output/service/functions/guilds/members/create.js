@@ -1,13 +1,25 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Add Guild Member
+ * Adds a user to the guild, provided you have a valid oauth2 access token for the user with the `guilds.join` scope
+ * Returns a 201 Created with the [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) as the body, or 204 No Content if the user is already a member of the guild. Fires a [Guild Member Add](https://discord.com/developers/docs/topics/gateway-events#guild-member-add) Gateway event.
+ * 
+ * For guilds with [Membership Screening](https://discord.com/developers/docs/resources/guild#membership-screening-object) enabled, this endpoint will default to adding new members as `pending` in the [guild member object](https://discord.com/developers/docs/resources/guild#guild-member-object). Members that are `pending` will have to complete membership screening before they become full members that can talk.
+ * @param {string} guild_id Guild id
+ * @param {string} user_id The user's id
+ * @param {string} access_token An oauth2 access token granted with the `guilds.join` to the bot's application for the user you want to add to the guild
+ * @param {string} nick Value to set user's nickname to
+ * @param {array} roles Array of role ids the member is assigned, *  * @ {string} undefined 
+ * @param {boolean} mute Whether the user is muted in voice channels
+ * @param {boolean} deaf Whether the user is deafened in voice channels
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, user_id, access_token, nick, roles, mute, deaf) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/guilds/{guild_id}/members/{user_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +27,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (user_id !== null) { _pathParams['user_id'] = user_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +46,13 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (access_token !== null) { _bodyParams['access_token'] = access_token; }
+  if (nick !== null) { _bodyParams['nick'] = nick; }
+  if (roles !== null) { _bodyParams['roles'] = roles; }
+  if (mute !== null) { _bodyParams['mute'] = mute; }
+  if (deaf !== null) { _bodyParams['deaf'] = deaf; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

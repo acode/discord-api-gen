@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Modify User Voice State
+ * Updates another user's voice state
+ * Fires a [Voice State Update](https://discord.com/developers/docs/topics/gateway-events#voice-state-update) Gateway event.
+ * @param {string} guild_id Guild id
+ * @param {string} user_id The user's id
+ * @param {string} channel_id The id of the channel the user is currently in
+ * @param {boolean} suppress Toggles the user's suppress state
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, user_id, channel_id, suppress = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PATCH';
+  let _pathname = '/guilds/{guild_id}/voice-states/{user_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (user_id !== null) { _pathParams['user_id'] = user_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +41,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (channel_id !== null) { _bodyParams['channel_id'] = channel_id; }
+  if (suppress !== null) { _bodyParams['suppress'] = suppress; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

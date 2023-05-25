@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Unpin Message
+ * Unpin a message in a channel
+ * Requires the `MANAGE_MESSAGES` permission. Returns a 204 empty response on success. Fires a [Channel Pins Update](https://discord.com/developers/docs/topics/gateway-events#channel-pins-update) Gateway event.
+ * @param {string} channel_id The id of the channel
+ * @param {string} message_id Id of the message
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id, message_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'DELETE';
+  let _pathname = '/channels/{channel_id}/pins/{message_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
+  if (message_id !== null) { _pathParams['message_id'] = message_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

@@ -1,13 +1,21 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Guild Prune Count
+ * Returns an object with one `pruned` key indicating the number of members that would be removed in a prune operation
+ * Requires the `KICK_MEMBERS` permission.
+ * 
+ * By default, prune will not remove users with roles. You can optionally include specific roles in your prune by providing the `include_roles` parameter. Any inactive user that has a subset of the provided role(s) will be counted in the prune and users with additional roles will not.
+ * @param {string} guild_id Guild id
+ * @param {integer} days Number of days to count prune for (1-30)
+ * @param {string} include_roles Role(s) to include
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, days, include_roles) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/prune';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +23,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +41,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (days !== null) { _queryParams['days'] = days; }
+  if (include_roles !== null) { _queryParams['include_roles'] = include_roles; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

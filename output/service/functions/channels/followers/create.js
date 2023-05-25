@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Follow Announcement Channel
+ * Follow an Announcement Channel to send messages to a target channel
+ * Requires the `MANAGE_WEBHOOKS` permission in the target channel. Returns a [followed channel](https://discord.com/developers/docs/resources/channel#followed-channel-object) object. Fires a [Webhooks Update](https://discord.com/developers/docs/topics/gateway-events#webhooks-update) Gateway event for the target channel.
+ * @param {string} channel_id The id of the channel
+ * @param {string} webhook_channel_id Id of target channel
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id, webhook_channel_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/channels/{channel_id}/followers';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +38,9 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (webhook_channel_id !== null) { _bodyParams['webhook_channel_id'] = webhook_channel_id; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

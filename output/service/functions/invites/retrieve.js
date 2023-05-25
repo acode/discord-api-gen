@@ -1,13 +1,19 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Invite
+ * Returns an [invite](https://discord.com/developers/docs/resources/invite#invite-object) object for the given code.
+ * @param {string} invite_code The invite code (unique ID)
+ * @param {boolean} with_counts Whether the invite should contain approximate member counts
+ * @param {boolean} with_expiration Whether the invite should contain the expiration date
+ * @param {string} guild_scheduled_event_id The guild scheduled event to include with the invite
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (invite_code, with_counts = null, with_expiration = null, guild_scheduled_event_id = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/invites/{invite_code}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +21,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (invite_code !== null) { _pathParams['invite_code'] = invite_code; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (with_counts !== null) { _queryParams['with_counts'] = with_counts; }
+  if (with_expiration !== null) { _queryParams['with_expiration'] = with_expiration; }
+  if (guild_scheduled_event_id !== null) { _queryParams['guild_scheduled_event_id'] = guild_scheduled_event_id; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

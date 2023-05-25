@@ -1,13 +1,19 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Create Guild Template
+ * Creates a template for the guild
+ * Requires the `MANAGE_GUILD` permission. Returns the created [guild template](https://discord.com/developers/docs/resources/guild-template#guild-template-object) object on success.
+ * @param {string} guild_id Guild id
+ * @param {string} name Name of the template (1-100 characters)
+ * @param {string} description Description for the template (0-120 characters)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, name, description = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/guilds/{guild_id}/templates';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +21,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (name !== null) { _bodyParams['name'] = name; }
+  if (description !== null) { _bodyParams['description'] = description; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

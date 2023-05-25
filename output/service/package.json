@@ -1,0 +1,9 @@
+{
+  "name": "discord-canary",
+  "author": "autocode",
+  "publish": false,
+  "dependencies": {
+    "lib": "latest",
+    "io": "^1.4.1"
+  }
+}

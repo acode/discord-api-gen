@@ -1,11 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const childProcess = require('child_process');
 
 const writeCode = require('../../helpers/discord/write_code.js');
 
-const OUTPUT_ROOT = './output/functions';
+const OUTPUT_ROOT = './output/service';
 const SCHEMA_PATH = './output/schema.json';
 const ENDPOINT_TEMPLATE_PATH = './helpers/discord/templates/endpoint.js';
+const TEMPLATE_PATH = './helpers/discord/templates/root';
 
 if (!fs.existsSync(OUTPUT_ROOT)) {
   fs.mkdirSync(OUTPUT_ROOT);
@@ -36,6 +38,15 @@ const writeParam = (param, indent = 0) => {
   }
   return lines.map(line => ` * ${line}`);
 };
+
+let files = fs.readdirSync(TEMPLATE_PATH);
+files.forEach(filename => {
+  let readpath = path.join(TEMPLATE_PATH, filename);
+  let file = fs.readFileSync(readpath);
+  let filepath = path.join(OUTPUT_ROOT, filename);
+  console.log(`Writing "${filename}" (${filepath}) ...`);
+  fs.writeFileSync(filepath, file);
+});
 
 schema.forEach(endpoint => {
 
@@ -84,7 +95,7 @@ schema.forEach(endpoint => {
 
   fileString = fileString.replace(/\n\n+/gi, '\n\n');
 
-  let filename = `${endpoint.name}.js`;
+  let filename = `functions/${endpoint.name}.js`;
 
   let fileparts = filename.split('/');
   for (let i = 0; i < fileparts.length - 1; i++) {
@@ -99,3 +110,5 @@ schema.forEach(endpoint => {
   fs.writeFileSync(filepath, fileString);
 
 });
+
+console.log(`Wrote ${schema.length} endpoints!`);

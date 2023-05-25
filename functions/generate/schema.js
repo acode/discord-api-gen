@@ -66,7 +66,6 @@ if (missingObjects.length) {
   );
 }
 
-
 let objectTypes = Object.keys(reference.types);
 let missingObjectTypes = objectTypes.filter(type => !(type in VALID_TYPES));
 if (missingObjectTypes.length) {

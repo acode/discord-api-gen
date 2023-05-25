@@ -1,13 +1,21 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Edit Channel Permissions
+ * Edit the channel permission overwrites for a user or role in a channel
+ * Only usable for guild channels. Requires the `MANAGE_ROLES` permission. Only permissions your bot has in the guild or parent channel (if applicable) can be allowed/denied (unless your bot has a `MANAGE_ROLES` overwrite in the channel). Returns a 204 empty response on success. Fires a [Channel Update](https://discord.com/developers/docs/topics/gateway-events#channel-update) Gateway event. For more information about permissions, see [permissions](https://discord.com/developers/docs/topics/permissions#permissions).
+ * @param {string} channel_id The id of the channel
+ * @param {string} overwrite_id Role or user id
+ * @param {string} allow The bitwise value of all allowed permissions (default `"0"`)
+ * @param {string} deny The bitwise value of all disallowed permissions (default `"0"`)
+ * @param {integer} type 0 for a role or 1 for a member
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id, overwrite_id, allow = null, deny = null, type) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/channels/{channel_id}/permissions/{overwrite_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +23,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
+  if (overwrite_id !== null) { _pathParams['overwrite_id'] = overwrite_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +42,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (allow !== null) { _bodyParams['allow'] = allow; }
+  if (deny !== null) { _bodyParams['deny'] = deny; }
+  if (type !== null) { _bodyParams['type'] = type; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

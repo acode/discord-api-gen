@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Auto Moderation Rule
+ * Get a single rule
+ * Returns an [auto moderation rule](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object) object.
+ * @param {string} guild_id Guild id
+ * @param {string} auto_moderation_rule_id The id of the rule
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, auto_moderation_rule_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/auto-moderation/rules/{auto_moderation_rule_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (auto_moderation_rule_id !== null) { _pathParams['auto_moderation_rule_id'] = auto_moderation_rule_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +39,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

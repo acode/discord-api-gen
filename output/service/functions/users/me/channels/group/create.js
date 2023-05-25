@@ -1,13 +1,18 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Create Group DM
+ * Create a new group DM channel with multiple users
+ * Returns a [DM channel](https://discord.com/developers/docs/resources/channel#channel-object) object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. Fires a [Channel Create](https://discord.com/developers/docs/topics/gateway-events#channel-create) Gateway event.
+ * @param {array} access_tokens Access tokens of users that have granted your app the `gdm.join` scope, *  * @ {string} undefined 
+ * @param {object} nicks A dictionary of user ids to their respective nicknames
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (access_tokens, nicks) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/users/@me/channels';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +20,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +38,10 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (access_tokens !== null) { _bodyParams['access_tokens'] = access_tokens; }
+  if (nicks !== null) { _bodyParams['nicks'] = nicks; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

@@ -1,13 +1,17 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Delete Followup Message
+ * 
+ * @param {string} interaction_token Continuation token for responding to the interaction
+ * @param {string} message_id Id of the message
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (interaction_token, message_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'DELETE';
+  let _pathname = '/webhooks/{application_id}/{interaction_token}/messages/{message_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +19,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (interaction_token !== null) { _pathParams['interaction_token'] = interaction_token; }
+  if (message_id !== null) { _pathParams['message_id'] = message_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +38,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

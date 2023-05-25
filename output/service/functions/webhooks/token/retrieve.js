@@ -1,13 +1,17 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Webhook with Token
+ * Same as above, except this call does not require authentication and returns no user in the webhook object.
+ * @param {string} webhook_id The id of the webhook
+ * @param {string} webhook_token The secure token of the webhook (returned for Incoming Webhooks)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (webhook_id, webhook_token) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/webhooks/{webhook_id}/{webhook_token}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +19,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (webhook_id !== null) { _pathParams['webhook_id'] = webhook_id; }
+  if (webhook_token !== null) { _pathParams['webhook_token'] = webhook_token; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +38,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

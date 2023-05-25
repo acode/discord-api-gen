@@ -1,13 +1,25 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Channel Messages
+ * Retrieves the messages in a channel
+ * Returns an array of [message](https://discord.com/developers/docs/resources/channel#message-object) objects on success.
+ * 
+ * If operating on a guild channel, this endpoint requires the current user to have the `VIEW_CHANNEL` permission. If the channel is a voice channel, they must _also_ have the `CONNECT` permission.
+ * 
+ * If the current user is missing the `READ_MESSAGE_HISTORY` permission in the channel, then no messages will be returned.
+ * @param {string} channel_id The id of the channel
+ * @param {string} around Get messages around this message ID
+ * @param {string} before Get messages before this message ID
+ * @param {string} after Get messages after this message ID
+ * @param {integer} limit Max number of messages to return (1-100)
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (channel_id, around = null, before = null, after = null, limit = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/channels/{channel_id}/messages';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +27,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (channel_id !== null) { _pathParams['channel_id'] = channel_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +45,12 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (around !== null) { _queryParams['around'] = around; }
+  if (before !== null) { _queryParams['before'] = before; }
+  if (after !== null) { _queryParams['after'] = after; }
+  if (limit !== null) { _queryParams['limit'] = limit; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

@@ -1,13 +1,26 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Create Guild Scheduled Event
+ * Create a guild scheduled event in the guild
+ * Returns a [guild scheduled event](https://discord.com/developers/docs/resources/guild-scheduled-event#guild-scheduled-event-object) object on success. Fires a [Guild Scheduled Event Create](https://discord.com/developers/docs/topics/gateway-events#guild-scheduled-event-create) Gateway event.
+ * @param {string} guild_id Guild id
+ * @param {string} channel_id The channel id of the scheduled event.
+ * @param {object} entity_metadata The entity metadata of the scheduled event
+ * @param {string} name The name of the scheduled event
+ * @param {integer} privacy_level The privacy level of the scheduled event
+ * @param {string} scheduled_start_time The time to schedule the scheduled event
+ * @param {string} scheduled_end_time The time when the scheduled event is scheduled to end
+ * @param {string} description The description of the scheduled event
+ * @param {any} entity_type The entity type of the scheduled event
+ * @param {object} image The cover image of the scheduled event
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, channel_id = null, entity_metadata = null, name, privacy_level, scheduled_start_time, scheduled_end_time = null, description = null, entity_type, image = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'POST';
+  let _pathname = '/guilds/{guild_id}/scheduled-events';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +28,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +46,17 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (channel_id !== null) { _bodyParams['channel_id'] = channel_id; }
+  if (entity_metadata !== null) { _bodyParams['entity_metadata'] = entity_metadata; }
+  if (name !== null) { _bodyParams['name'] = name; }
+  if (privacy_level !== null) { _bodyParams['privacy_level'] = privacy_level; }
+  if (scheduled_start_time !== null) { _bodyParams['scheduled_start_time'] = scheduled_start_time; }
+  if (scheduled_end_time !== null) { _bodyParams['scheduled_end_time'] = scheduled_end_time; }
+  if (description !== null) { _bodyParams['description'] = description; }
+  if (entity_type !== null) { _bodyParams['entity_type'] = entity_type; }
+  if (image !== null) { _bodyParams['image'] = image; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

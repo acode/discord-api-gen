@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Modify Guild Welcome Screen
+ * Modify the guild's [Welcome Screen](https://discord.com/developers/docs/resources/guild#welcome-screen-object)
+ * Requires the `MANAGE_GUILD` permission. Returns the updated [Welcome Screen](https://discord.com/developers/docs/resources/guild#welcome-screen-object) object. May fire a [Guild Update](https://discord.com/developers/docs/topics/gateway-events#guild-update) Gateway event.
+ * @param {string} guild_id Guild id
+ * @param {boolean} enabled Whether the welcome screen is enabled
+ * @param {array} welcome_channels Channels linked in the welcome screen and their display options, *  * @ {object} undefined 
+ * @param {string} description The server description to show in the welcome screen
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, enabled, welcome_channels, description) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PATCH';
+  let _pathname = '/guilds/{guild_id}/welcome-screen';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +40,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (enabled !== null) { _bodyParams['enabled'] = enabled; }
+  if (welcome_channels !== null) { _bodyParams['welcome_channels'] = welcome_channels; }
+  if (description !== null) { _bodyParams['description'] = description; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

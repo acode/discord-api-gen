@@ -1,13 +1,16 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Bulk Overwrite Global Application Commands
+ * Takes a list of application commands, overwriting the existing global command list for this application
+ * Returns `200` and a list of [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) objects. Commands that do not already exist will count toward daily application command create limits.
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async () => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/applications/{application_id}/commands';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +18,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +36,8 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

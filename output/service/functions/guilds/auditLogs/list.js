@@ -1,13 +1,24 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Get Guild Audit Log
+ * Returns an [audit log](https://discord.com/developers/docs/resources/audit-log#audit-log-object) object for the guild
+ * Requires the [`VIEW_AUDIT_LOG`](https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags) permission.
+ * 
+ * The returned list of audit log entries is ordered based on whether you use `before` or `after`. When using `before`, the list is ordered by the audit log entry ID **descending** (newer entries first). If `after` is used, the list is reversed and appears in **ascending** order (older entries first). Omitting both `before` and `after` defaults to `before` the current timestamp and will show the most recent entries in descending order by ID, the opposite can be achieved using `after=0` (showing oldest entries).
+ * @param {string} guild_id Guild id
+ * @param {string} user_id Entries from a specific user ID
+ * @param {integer} action_type Entries for a specific [audit log event](https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-events)
+ * @param {string} before Entries with ID less than a specific audit log entry ID
+ * @param {string} after Entries with ID greater than a specific audit log entry ID
+ * @param {integer} limit Maximum number of entries (between 1-100) to return, defaults to 50
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, user_id = null, action_type = null, before = null, after = null, limit = null) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'GET';
+  let _pathname = '/guilds/{guild_id}/audit-logs';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +26,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +44,13 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
+  if (user_id !== null) { _queryParams['user_id'] = user_id; }
+  if (action_type !== null) { _queryParams['action_type'] = action_type; }
+  if (before !== null) { _queryParams['before'] = before; }
+  if (after !== null) { _queryParams['after'] = after; }
+  if (limit !== null) { _queryParams['limit'] = limit; }
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

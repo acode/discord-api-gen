@@ -1,13 +1,21 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Edit Application Command Permissions
+ * Edits command permissions for a specific command for your application in a guild and returns a [guild application command permissions](https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure) object
+ * Fires an [Application Command Permissions Update](https://discord.com/developers/docs/topics/gateway-events#application-command-permissions-update) Gateway event.
+ * 
+ * You can add up to 100 permission overwrites for a command.
+ * @param {string} guild_id Guild id
+ * @param {string} command_id Unique ID of command
+ * @param {array} permissions Permissions for the command in the guild, *  * @ {object} undefined 
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (guild_id, command_id, permissions) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PUT';
+  let _pathname = '/applications/{application_id}/guilds/{guild_id}/commands/{command_id}/permissions';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +23,8 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (guild_id !== null) { _pathParams['guild_id'] = guild_id; }
+  if (command_id !== null) { _pathParams['command_id'] = command_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +42,9 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (permissions !== null) { _bodyParams['permissions'] = permissions; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {

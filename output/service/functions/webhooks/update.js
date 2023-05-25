@@ -1,13 +1,20 @@
 const io = require('io');
 
 /**
-*{description}**{params}**{returns}*
+ * Modify Webhook
+ * Modify a webhook
+ * Requires the `MANAGE_WEBHOOKS` permission. Returns the updated [webhook](https://discord.com/developers/docs/resources/webhook#webhook-object) object on success. Fires a [Webhooks Update](https://discord.com/developers/docs/topics/gateway-events#webhooks-update) Gateway event.
+ * @param {string} webhook_id The id of the webhook
+ * @param {string} name The default name of the webhook
+ * @param {object} avatar Image for the default webhook avatar
+ * @param {string} channel_id The new channel id this webhook should be moved to
+ * @returns {object}
  */
-module.exports = async (/*{paramsList}*/) => {
+module.exports = async (webhook_id, name, avatar, channel_id) => {
 
-  const supportsMultipart = /*{supportsMultipart}*/;
-  const _method = '/*{method}*/';
-  let _pathname = '/*{url}*/';
+  const supportsMultipart = false;
+  const _method = 'PATCH';
+  let _pathname = '/webhooks/{webhook_id}';
 
   let _provider = context.providers['discord'] || {};
   let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
@@ -15,7 +22,7 @@ module.exports = async (/*{paramsList}*/) => {
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 
   const _pathParams = {};
-/*{checkPathParams}*/
+  if (webhook_id !== null) { _pathParams['webhook_id'] = webhook_id; }
   _pathParams['application_id'] = _providerAuth.clientId;
   _pathname = _pathname.replace(/\{(.*?)\}/gi, ($0, $1) => {
     let name = $1;
@@ -33,10 +40,11 @@ module.exports = async (/*{paramsList}*/) => {
   };
 
   const _queryParams = {};
-/*{checkQueryParams}*/
 
   const _bodyParams = {};
-/*{checkBodyParams}*/
+  if (name !== null) { _bodyParams['name'] = name; }
+  if (avatar !== null) { _bodyParams['avatar'] = avatar; }
+  if (channel_id !== null) { _bodyParams['channel_id'] = channel_id; }
 
   let _result;
   if (supportsMultipart && _bodyParams.attachments && _bodyParams.attachments.length) {
