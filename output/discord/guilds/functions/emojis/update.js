@@ -7,10 +7,11 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {string} emoji_id [emoji id](https://discord.com/developers/docs/reference#image-formatting)
  * @param {string} name Name of the emoji
- * @param {array} roles Roles allowed to use this emoji, *  * @ {string} undefined 
+ * @param {array} roles Roles allowed to use this emoji
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (guild_id, emoji_id, name, roles) => {
+module.exports = async (guild_id, emoji_id, name, roles, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

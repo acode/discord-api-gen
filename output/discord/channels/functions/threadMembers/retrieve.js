@@ -3,14 +3,13 @@ const io = require('io');
 /**
  * Get Thread Member
  * Returns a [thread member](https://discord.com/developers/docs/resources/channel#thread-member-object) object for the specified user if they are a member of the thread, returns a 404 response otherwise.
- * 
  * When `with_member` is set to `true`, the thread member object will include a `member` field containing a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object.
  * @param {string} channel_id The id of the channel
  * @param {string} user_id The user's id
  * @param {boolean} with_member Whether to include a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object for the thread member
  * @returns {object}
  */
-module.exports = async (channel_id, user_id, with_member = null) => {
+module.exports = async (channel_id, user_id, with_member = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

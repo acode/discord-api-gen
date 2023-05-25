@@ -4,18 +4,18 @@ const io = require('io');
  * Add Guild Member
  * Adds a user to the guild, provided you have a valid oauth2 access token for the user with the `guilds.join` scope
  * Returns a 201 Created with the [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) as the body, or 204 No Content if the user is already a member of the guild. Fires a [Guild Member Add](https://discord.com/developers/docs/topics/gateway-events#guild-member-add) Gateway event.
- * 
  * For guilds with [Membership Screening](https://discord.com/developers/docs/resources/guild#membership-screening-object) enabled, this endpoint will default to adding new members as `pending` in the [guild member object](https://discord.com/developers/docs/resources/guild#guild-member-object). Members that are `pending` will have to complete membership screening before they become full members that can talk.
  * @param {string} guild_id Guild id
  * @param {string} user_id The user's id
  * @param {string} access_token An oauth2 access token granted with the `guilds.join` to the bot's application for the user you want to add to the guild
  * @param {string} nick Value to set user's nickname to
- * @param {array} roles Array of role ids the member is assigned, *  * @ {string} undefined 
+ * @param {array} roles Array of role ids the member is assigned
+ * @ {string}  
  * @param {boolean} mute Whether the user is muted in voice channels
  * @param {boolean} deaf Whether the user is deafened in voice channels
  * @returns {object}
  */
-module.exports = async (guild_id, user_id, access_token, nick, roles, mute, deaf) => {
+module.exports = async (guild_id, user_id, access_token, nick, roles, mute, deaf, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

@@ -6,7 +6,7 @@ const io = require('io');
  * @param {string} sticker_id [id of the sticker](https://discord.com/developers/docs/reference#image-formatting)
  * @returns {object}
  */
-module.exports = async (sticker_id) => {
+module.exports = async (sticker_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

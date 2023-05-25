@@ -4,7 +4,6 @@ const io = require('io');
  * Get Guild Audit Log
  * Returns an [audit log](https://discord.com/developers/docs/resources/audit-log#audit-log-object) object for the guild
  * Requires the [`VIEW_AUDIT_LOG`](https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags) permission.
- * 
  * The returned list of audit log entries is ordered based on whether you use `before` or `after`. When using `before`, the list is ordered by the audit log entry ID **descending** (newer entries first). If `after` is used, the list is reversed and appears in **ascending** order (older entries first). Omitting both `before` and `after` defaults to `before` the current timestamp and will show the most recent entries in descending order by ID, the opposite can be achieved using `after=0` (showing oldest entries).
  * @param {string} guild_id Guild id
  * @param {string} user_id Entries from a specific user ID
@@ -14,7 +13,7 @@ const io = require('io');
  * @param {integer} limit Maximum number of entries (between 1-100) to return, defaults to 50
  * @returns {object}
  */
-module.exports = async (guild_id, user_id = null, action_type = null, before = null, after = null, limit = null) => {
+module.exports = async (guild_id, user_id = null, action_type = null, before = null, after = null, limit = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

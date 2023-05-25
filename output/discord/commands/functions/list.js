@@ -4,10 +4,11 @@ const io = require('io');
  * Get Global Application Commands
  * Fetch all of the global commands for your application
  * Returns an array of [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) objects.
- * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields, * Default `false`.
+ * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields
+ * Default `false`.
  * @returns {object}
  */
-module.exports = async (with_localizations = null) => {
+module.exports = async (with_localizations = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

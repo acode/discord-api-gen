@@ -9,7 +9,7 @@ const io = require('io');
  * @param {string} nick Nickname of the user being added
  * @returns {object}
  */
-module.exports = async (channel_id, user_id, access_token, nick) => {
+module.exports = async (channel_id, user_id, access_token, nick, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

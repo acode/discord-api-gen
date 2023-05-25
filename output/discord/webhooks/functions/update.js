@@ -10,7 +10,7 @@ const io = require('io');
  * @param {string} channel_id The new channel id this webhook should be moved to
  * @returns {object}
  */
-module.exports = async (webhook_id, name, avatar, channel_id) => {
+module.exports = async (webhook_id, name, avatar, channel_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

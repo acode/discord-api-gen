@@ -7,10 +7,11 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {string} name Name of the emoji
  * @param {object} image The 128x128 emoji image
- * @param {array} roles Roles allowed to use this emoji, *  * @ {string} undefined 
+ * @param {array} roles Roles allowed to use this emoji
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (guild_id, name, image, roles) => {
+module.exports = async (guild_id, name, image, roles, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

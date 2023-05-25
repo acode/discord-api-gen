@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} overwrite_id Role or user id
  * @returns {object}
  */
-module.exports = async (channel_id, overwrite_id) => {
+module.exports = async (channel_id, overwrite_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

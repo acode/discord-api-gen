@@ -12,7 +12,7 @@ const io = require('io');
  * @param {integer} rate_limit_per_user Amount of seconds a user has to wait before sending another message (0-21600)
  * @returns {object}
  */
-module.exports = async (channel_id, name, auto_archive_duration = null, type = null, invitable = null, rate_limit_per_user = null) => {
+module.exports = async (channel_id, name, auto_archive_duration = null, type = null, invitable = null, rate_limit_per_user = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

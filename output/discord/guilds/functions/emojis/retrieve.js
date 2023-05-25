@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} emoji_id [emoji id](https://discord.com/developers/docs/reference#image-formatting)
  * @returns {object}
  */
-module.exports = async (guild_id, emoji_id) => {
+module.exports = async (guild_id, emoji_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

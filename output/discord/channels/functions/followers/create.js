@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} webhook_channel_id Id of target channel
  * @returns {object}
  */
-module.exports = async (channel_id, webhook_channel_id) => {
+module.exports = async (channel_id, webhook_channel_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

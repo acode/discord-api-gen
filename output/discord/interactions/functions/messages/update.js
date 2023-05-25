@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} message_id Id of the message
  * @returns {object}
  */
-module.exports = async (interaction_token, message_id) => {
+module.exports = async (interaction_token, message_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

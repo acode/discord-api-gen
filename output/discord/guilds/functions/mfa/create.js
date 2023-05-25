@@ -8,7 +8,7 @@ const io = require('io');
  * @param {integer} level [MFA level](https://discord.com/developers/docs/resources/guild#guild-object-mfa-level)
  * @returns {object}
  */
-module.exports = async (guild_id, level) => {
+module.exports = async (guild_id, level, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

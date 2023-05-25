@@ -10,7 +10,7 @@ const io = require('io');
  * @param {boolean} suppress Toggles the user's suppress state
  * @returns {object}
  */
-module.exports = async (guild_id, user_id, channel_id, suppress = null) => {
+module.exports = async (guild_id, user_id, channel_id, suppress = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

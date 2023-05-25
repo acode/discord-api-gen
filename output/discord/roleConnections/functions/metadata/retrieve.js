@@ -5,7 +5,7 @@ const io = require('io');
  * Returns a list of [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) objects for the given application.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

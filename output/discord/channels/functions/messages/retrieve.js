@@ -4,13 +4,12 @@ const io = require('io');
  * Get Channel Message
  * Retrieves a specific message in the channel
  * Returns a [message](https://discord.com/developers/docs/resources/channel#message-object) object on success.
- * 
  * If operating on a guild channel, this endpoint requires the current user to have the `VIEW_CHANNEL` and `READ_MESSAGE_HISTORY` permissions. If the channel is a voice channel, they must _also_ have the `CONNECT` permission.
  * @param {string} channel_id The id of the channel
  * @param {string} message_id Id of the message
  * @returns {object}
  */
-module.exports = async (channel_id, message_id) => {
+module.exports = async (channel_id, message_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

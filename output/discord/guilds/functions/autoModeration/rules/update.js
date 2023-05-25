@@ -9,13 +9,16 @@ const io = require('io');
  * @param {string} name The rule name
  * @param {integer} event_type The [event type](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-event-types)
  * @param {object} trigger_metadata The [trigger metadata](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-trigger-metadata)
- * @param {array} actions The actions which will execute when the rule is triggered, *  * @ {object} undefined 
+ * @param {array} actions The actions which will execute when the rule is triggered
+ * @ {object}  
  * @param {boolean} enabled Whether the rule is enabled
- * @param {array} exempt_roles The role ids that should not be affected by the rule (Maximum of 20), *  * @ {string} undefined 
- * @param {array} exempt_channels The channel ids that should not be affected by the rule (Maximum of 50), *  * @ {string} undefined 
+ * @param {array} exempt_roles The role ids that should not be affected by the rule (Maximum of 20)
+ * @ {string}  
+ * @param {array} exempt_channels The channel ids that should not be affected by the rule (Maximum of 50)
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (guild_id, auto_moderation_rule_id, name, event_type, trigger_metadata = null, actions, enabled, exempt_roles, exempt_channels) => {
+module.exports = async (guild_id, auto_moderation_rule_id, name, event_type, trigger_metadata = null, actions, enabled, exempt_roles, exempt_channels, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

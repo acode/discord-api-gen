@@ -9,7 +9,7 @@ const io = require('io');
  * @param {object} metadata Object mapping [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) keys to their `string`-ified value (max 100 characters) for the user on the platform a bot has connected
  * @returns {object}
  */
-module.exports = async (platform_name = null, platform_username = null, metadata = null) => {
+module.exports = async (platform_name = null, platform_username = null, metadata = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

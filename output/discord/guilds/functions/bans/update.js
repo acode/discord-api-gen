@@ -10,7 +10,7 @@ const io = require('io');
  * @param {integer} delete_message_seconds Number of seconds to delete messages for, between 0 and 604800 (7 days)
  * @returns {object}
  */
-module.exports = async (guild_id, user_id, delete_message_days = null, delete_message_seconds = null) => {
+module.exports = async (guild_id, user_id, delete_message_days = null, delete_message_seconds = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

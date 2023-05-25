@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} template_code The template code (unique ID)
  * @returns {object}
  */
-module.exports = async (guild_id, template_code) => {
+module.exports = async (guild_id, template_code, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

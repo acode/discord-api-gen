@@ -18,7 +18,7 @@ const io = require('io');
  * @param {object} image The cover image of the scheduled event
  * @returns {object}
  */
-module.exports = async (guild_id, guild_scheduled_event_id, channel_id = null, entity_metadata = null, name = null, privacy_level = null, scheduled_start_time = null, scheduled_end_time = null, description = null, entity_type = null, status = null, image = null) => {
+module.exports = async (guild_id, guild_scheduled_event_id, channel_id = null, entity_metadata = null, name = null, privacy_level = null, scheduled_start_time = null, scheduled_end_time = null, description = null, entity_type = null, status = null, image = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

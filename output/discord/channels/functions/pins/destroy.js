@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} message_id Id of the message
  * @returns {object}
  */
-module.exports = async (channel_id, message_id) => {
+module.exports = async (channel_id, message_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

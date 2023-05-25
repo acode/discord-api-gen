@@ -6,7 +6,7 @@ const io = require('io');
  * For OAuth2, this requires the `identify` scope, which will return the object _without_ an email, and optionally the `email` scope, which returns the object _with_ an email.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

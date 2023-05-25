@@ -4,7 +4,6 @@ const io = require('io');
  * Create Stage Instance
  * Creates a new Stage instance associated to a Stage channel
  * Returns that [Stage instance](https://discord.com/developers/docs/resources/stage-instance#stage-instance-object-stage-instance-structure). Fires a [Stage Instance Create](https://discord.com/developers/docs/topics/gateway-events#stage-instance-create) Gateway event.
- * 
  * Requires the user to be a moderator of the Stage channel.
  * @param {string} channel_id The id of the Stage channel
  * @param {string} topic The topic of the Stage instance (1-120 characters)
@@ -12,7 +11,7 @@ const io = require('io');
  * @param {boolean} send_start_notification Notify @everyone that a Stage instance has started
  * @returns {object}
  */
-module.exports = async (channel_id, topic, privacy_level = null, send_start_notification = null) => {
+module.exports = async (channel_id, topic, privacy_level = null, send_start_notification = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

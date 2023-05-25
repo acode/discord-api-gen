@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} guild_scheduled_event_id The id of the scheduled event
  * @returns {object}
  */
-module.exports = async (guild_id, guild_scheduled_event_id) => {
+module.exports = async (guild_id, guild_scheduled_event_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

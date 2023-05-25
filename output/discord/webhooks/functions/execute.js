@@ -7,20 +7,27 @@ const io = require('io');
  * @param {string} webhook_id The id of the webhook
  * @param {string} webhook_token The secure token of the webhook (returned for Incoming Webhooks)
  * @param {boolean} wait Waits for server confirmation of message send before response, and returns the created message body (defaults to `false`; when `false` a message that is not saved does not return an error)
- * @param {string} thread_id Send a message to the specified thread within a webhook's channel, * The thread will automatically be unarchived.
+ * @param {string} thread_id Send a message to the specified thread within a webhook's channel
+ * The thread will automatically be unarchived.
  * @param {string} content The message contents (up to 2000 characters)
  * @param {string} username Override the default username of the webhook
  * @param {string} avatar_url Override the default avatar of the webhook
  * @param {boolean} tts True if this is a TTS message
- * @param {array} embeds Embedded `rich` content, *  * @ {object} undefined 
+ * @param {array} embeds Embedded `rich` content
+ * @ {object}  
  * @param {object} allowed_mentions Allowed mentions for the message
- * @param {array} components The components to include with the message, *  * @ {object} action_row 
- * @param {array} attachments Attachment objects with filename and description, *  * @ {object} attachment , *  * @   {string} filename , *  * @   {string} description , *  * @   {buffer} file 
+ * @param {array} components The components to include with the message
+ * @ {object} action_row 
+ * @param {array} attachments Attachment objects with filename and description
+ * @ {object} attachment 
+ * @   {string} filename 
+ * @   {string} description 
+ * @   {buffer} file 
  * @param {integer} flags [message flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) combined as a [bitfield](https://en.wikipedia.org/wiki/Bit_field) (only `SUPPRESS_EMBEDS` can be set)
  * @param {string} thread_name Name of thread to create (requires the webhook channel to be a forum channel)
  * @returns {object}
  */
-module.exports = async (webhook_id, webhook_token, wait = null, thread_id = null, content = null, username = null, avatar_url = null, tts = null, embeds = null, allowed_mentions = null, components = null, attachments = null, flags = null, thread_name = null) => {
+module.exports = async (webhook_id, webhook_token, wait = null, thread_id = null, content = null, username = null, avatar_url = null, tts = null, embeds = null, allowed_mentions = null, components = null, attachments = null, flags = null, thread_name = null, context) => {
 
   const supportsMultipart = true;
   const _method = 'POST';

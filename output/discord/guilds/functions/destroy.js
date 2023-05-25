@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @returns {object}
  */
-module.exports = async (guild_id) => {
+module.exports = async (guild_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

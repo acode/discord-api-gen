@@ -4,12 +4,11 @@ const io = require('io');
  * Create Guild Sticker
  * Create a new sticker for the guild
  * Send a `multipart/form-data` body. Requires the `MANAGE_GUILD_EXPRESSIONS` permission. Returns the new [sticker](https://discord.com/developers/docs/resources/sticker#sticker-object) object on success. Fires a [Guild Stickers Update](https://discord.com/developers/docs/topics/gateway-events#guild-stickers-update) Gateway event.
- * 
  * Every guilds has five free sticker slots by default, and each Boost level will grant access to more slots.
  * @param {string} guild_id Guild id
  * @returns {object}
  */
-module.exports = async (guild_id) => {
+module.exports = async (guild_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

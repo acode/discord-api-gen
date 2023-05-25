@@ -4,13 +4,12 @@ const io = require('io');
  * Crosspost Message
  * Crosspost a message in an Announcement Channel to following channels
  * This endpoint requires the `SEND_MESSAGES` permission, if the current user sent the message, or additionally the `MANAGE_MESSAGES` permission, for all other messages, to be present for the current user.
- * 
  * Returns a [message](https://discord.com/developers/docs/resources/channel#message-object) object. Fires a [Message Update](https://discord.com/developers/docs/topics/gateway-events#message-update) Gateway event.
  * @param {string} channel_id The id of the channel
  * @param {string} message_id Id of the message
  * @returns {object}
  */
-module.exports = async (channel_id, message_id) => {
+module.exports = async (channel_id, message_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

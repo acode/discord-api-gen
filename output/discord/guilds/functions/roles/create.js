@@ -14,7 +14,7 @@ const io = require('io');
  * @param {boolean} mentionable Whether the role should be mentionable
  * @returns {object}
  */
-module.exports = async (guild_id, name, permissions, color, hoist, icon, unicode_emoji, mentionable) => {
+module.exports = async (guild_id, name, permissions, color, hoist, icon, unicode_emoji, mentionable, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

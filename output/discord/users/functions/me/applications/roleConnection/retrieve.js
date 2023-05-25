@@ -6,7 +6,7 @@ const io = require('io');
  * Requires an OAuth2 access token with `role_connections.write` scope for the application specified in the path.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

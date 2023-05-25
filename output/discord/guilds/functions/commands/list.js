@@ -5,10 +5,11 @@ const io = require('io');
  * Fetch all of the guild commands for your application for a specific guild
  * Returns an array of [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) objects.
  * @param {string} guild_id Guild id
- * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields, * Default `false`.
+ * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields
+ * Default `false`.
  * @returns {object}
  */
-module.exports = async (guild_id, with_localizations = null) => {
+module.exports = async (guild_id, with_localizations = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

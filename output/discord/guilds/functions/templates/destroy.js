@@ -2,12 +2,11 @@ const io = require('io');
 
 /**
  * Delete Guild Template
- * 
  * @param {string} guild_id Guild id
  * @param {string} template_code The template code (unique ID)
  * @returns {object}
  */
-module.exports = async (guild_id, template_code) => {
+module.exports = async (guild_id, template_code, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

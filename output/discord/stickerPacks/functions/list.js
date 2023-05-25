@@ -5,7 +5,7 @@ const io = require('io');
  * Returns the list of sticker packs available to Nitro subscribers.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

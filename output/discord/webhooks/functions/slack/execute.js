@@ -10,7 +10,7 @@ const io = require('io');
  * @param {boolean} wait Waits for server confirmation of message send before response (defaults to `true`; when `false` a message that is not saved does not return an error)
  * @returns {object}
  */
-module.exports = async (webhook_id, webhook_token, thread_id = null, wait = null) => {
+module.exports = async (webhook_id, webhook_token, thread_id = null, wait = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

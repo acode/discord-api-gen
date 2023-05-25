@@ -2,10 +2,9 @@ const io = require('io');
 
 /**
  * List Voice Regions
- * 
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

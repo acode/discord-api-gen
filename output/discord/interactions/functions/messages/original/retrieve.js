@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} interaction_token Continuation token for responding to the interaction
  * @returns {object}
  */
-module.exports = async (interaction_token) => {
+module.exports = async (interaction_token, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

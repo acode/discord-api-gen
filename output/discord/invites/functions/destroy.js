@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} invite_code The invite code (unique ID)
  * @returns {object}
  */
-module.exports = async (invite_code) => {
+module.exports = async (invite_code, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

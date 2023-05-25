@@ -22,13 +22,14 @@ const io = require('io');
  * @param {string} rules_channel_id The id of the channel where Community guilds display rules and/or guidelines
  * @param {string} public_updates_channel_id The id of the channel where admins and moderators of Community guilds receive notices from Discord
  * @param {string} preferred_locale The preferred [locale](https://discord.com/developers/docs/reference#locales) of a Community guild used in server discovery and notices from Discord; defaults to "en-US"
- * @param {array} features Enabled guild features, *  * @ {string} undefined 
+ * @param {array} features Enabled guild features
+ * @ {string}  
  * @param {string} description The description for the guild
  * @param {boolean} premium_progress_bar_enabled Whether the guild's boost progress bar should be enabled
  * @param {string} safety_alerts_channel_id The id of the channel where admins and moderators of Community guilds receive safety alerts from Discord
  * @returns {object}
  */
-module.exports = async (guild_id, name, region, verification_level, default_message_notifications, explicit_content_filter, afk_channel_id, afk_timeout, icon, owner_id, splash, discovery_splash, banner, system_channel_id, system_channel_flags, rules_channel_id, public_updates_channel_id, preferred_locale, features, description, premium_progress_bar_enabled, safety_alerts_channel_id) => {
+module.exports = async (guild_id, name, region, verification_level, default_message_notifications, explicit_content_filter, afk_channel_id, afk_timeout, icon, owner_id, splash, discovery_splash, banner, system_channel_id, system_channel_flags, rules_channel_id, public_updates_channel_id, preferred_locale, features, description, premium_progress_bar_enabled, safety_alerts_channel_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

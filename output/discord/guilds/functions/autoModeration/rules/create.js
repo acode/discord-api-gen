@@ -9,13 +9,16 @@ const io = require('io');
  * @param {integer} event_type The [event type](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-event-types)
  * @param {integer} trigger_type The [trigger type](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-trigger-types)
  * @param {object} trigger_metadata The [trigger metadata](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-trigger-metadata)
- * @param {array} actions The actions which will execute when the rule is triggered, *  * @ {object} undefined 
+ * @param {array} actions The actions which will execute when the rule is triggered
+ * @ {object}  
  * @param {boolean} enabled Whether the rule is enabled (False by default)
- * @param {array} exempt_roles The role ids that should not be affected by the rule (Maximum of 20), *  * @ {string} undefined 
- * @param {array} exempt_channels The channel ids that should not be affected by the rule (Maximum of 50), *  * @ {string} undefined 
+ * @param {array} exempt_roles The role ids that should not be affected by the rule (Maximum of 20)
+ * @ {string}  
+ * @param {array} exempt_channels The channel ids that should not be affected by the rule (Maximum of 50)
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (guild_id, name, event_type, trigger_type, trigger_metadata = null, actions, enabled = null, exempt_roles = null, exempt_channels = null) => {
+module.exports = async (guild_id, name, event_type, trigger_type, trigger_metadata = null, actions, enabled = null, exempt_roles = null, exempt_channels = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

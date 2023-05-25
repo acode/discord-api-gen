@@ -4,11 +4,12 @@ const io = require('io');
  * Create Group DM
  * Create a new group DM channel with multiple users
  * Returns a [DM channel](https://discord.com/developers/docs/resources/channel#channel-object) object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. Fires a [Channel Create](https://discord.com/developers/docs/topics/gateway-events#channel-create) Gateway event.
- * @param {array} access_tokens Access tokens of users that have granted your app the `gdm.join` scope, *  * @ {string} undefined 
+ * @param {array} access_tokens Access tokens of users that have granted your app the `gdm.join` scope
+ * @ {string}  
  * @param {object} nicks A dictionary of user ids to their respective nicknames
  * @returns {object}
  */
-module.exports = async (access_tokens, nicks) => {
+module.exports = async (access_tokens, nicks, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

@@ -4,16 +4,16 @@ const io = require('io');
  * Begin Guild Prune
  * Begin a prune operation
  * Requires the `KICK_MEMBERS` permission. Returns an object with one `pruned` key indicating the number of members that were removed in the prune operation. For large guilds it's recommended to set the `compute_prune_count` option to `false`, forcing `pruned` to `null`. Fires multiple [Guild Member Remove](https://discord.com/developers/docs/topics/gateway-events#guild-member-remove) Gateway events.
- * 
  * By default, prune will not remove users with roles. You can optionally include specific roles in your prune by providing the `include_roles` parameter. Any inactive user that has a subset of the provided role(s) will be included in the prune and users with additional roles will not.
  * @param {string} guild_id Guild id
  * @param {integer} days Number of days to prune (1-30)
  * @param {boolean} compute_prune_count Whether `pruned` is returned, discouraged for large guilds
- * @param {array} include_roles Role(s) to include, *  * @ {string} undefined 
+ * @param {array} include_roles Role(s) to include
+ * @ {string}  
  * @param {string} reason Reason for the prune (deprecated)
  * @returns {object}
  */
-module.exports = async (guild_id, days, compute_prune_count, include_roles, reason = null) => {
+module.exports = async (guild_id, days, compute_prune_count, include_roles, reason = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

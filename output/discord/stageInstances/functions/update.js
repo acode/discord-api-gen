@@ -4,14 +4,13 @@ const io = require('io');
  * Modify Stage Instance
  * Updates fields of an existing Stage instance
  * Returns the updated [Stage instance](https://discord.com/developers/docs/resources/stage-instance#stage-instance-object-stage-instance-structure). Fires a [Stage Instance Update](https://discord.com/developers/docs/topics/gateway-events#stage-instance-update) Gateway event.
- * 
  * Requires the user to be a moderator of the Stage channel.
  * @param {string} channel_id The id of the channel
  * @param {string} topic The topic of the Stage instance (1-120 characters)
  * @param {integer} privacy_level The [privacy level](https://discord.com/developers/docs/resources/stage-instance#stage-instance-object-privacy-level) of the Stage instance
  * @returns {object}
  */
-module.exports = async (channel_id, topic = null, privacy_level = null) => {
+module.exports = async (channel_id, topic = null, privacy_level = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

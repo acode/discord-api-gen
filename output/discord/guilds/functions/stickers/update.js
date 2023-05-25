@@ -11,7 +11,7 @@ const io = require('io');
  * @param {string} tags Autocomplete/suggestion tags for the sticker (max 200 characters)
  * @returns {object}
  */
-module.exports = async (guild_id, sticker_id, name, description, tags) => {
+module.exports = async (guild_id, sticker_id, name, description, tags, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

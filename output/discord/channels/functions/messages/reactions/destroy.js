@@ -11,7 +11,7 @@ const io = require('io');
  * @param {string} user_id The user's id
  * @returns {object}
  */
-module.exports = async (channel_id, message_id, emoji, user_id) => {
+module.exports = async (channel_id, message_id, emoji, user_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

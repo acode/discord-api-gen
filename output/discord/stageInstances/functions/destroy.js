@@ -4,12 +4,11 @@ const io = require('io');
  * Delete Stage Instance
  * Deletes the Stage instance
  * Returns `204 No Content`. Fires a [Stage Instance Delete](https://discord.com/developers/docs/topics/gateway-events#stage-instance-delete) Gateway event.
- * 
  * Requires the user to be a moderator of the Stage channel.
  * @param {string} channel_id The id of the channel
  * @returns {object}
  */
-module.exports = async (channel_id) => {
+module.exports = async (channel_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

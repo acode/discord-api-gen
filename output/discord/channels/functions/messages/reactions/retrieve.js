@@ -12,7 +12,7 @@ const io = require('io');
  * @param {integer} limit Max number of users to return (1-100)
  * @returns {object}
  */
-module.exports = async (channel_id, message_id, emoji, after = null, limit = null) => {
+module.exports = async (channel_id, message_id, emoji, after = null, limit = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

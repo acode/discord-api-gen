@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} style Style of the widget image returned (see below)
  * @returns {object}
  */
-module.exports = async (guild_id, style) => {
+module.exports = async (guild_id, style, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

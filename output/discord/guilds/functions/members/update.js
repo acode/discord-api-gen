@@ -7,14 +7,18 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {string} user_id The user's id
  * @param {string} nick Value to set user's nickname to
- * @param {array} roles Array of role ids the member is assigned, *  * @ {string} undefined 
- * @param {boolean} mute Whether the user is muted in voice channels, * Will throw a 400 error if the user is not in a voice channel
- * @param {boolean} deaf Whether the user is deafened in voice channels, * Will throw a 400 error if the user is not in a voice channel
+ * @param {array} roles Array of role ids the member is assigned
+ * @ {string}  
+ * @param {boolean} mute Whether the user is muted in voice channels
+ * Will throw a 400 error if the user is not in a voice channel
+ * @param {boolean} deaf Whether the user is deafened in voice channels
+ * Will throw a 400 error if the user is not in a voice channel
  * @param {string} channel_id Id of channel to move user to (if they are connected to voice)
- * @param {string} communication_disabled_until When the user's [timeout](https://support.discord.com/hc/en-us/articles/4413305239191-Time-Out-FAQ) will expire and the user will be able to communicate in the guild again (up to 28 days in the future), set to null to remove timeout, * Will throw a 403 error if the user has the ADMINISTRATOR permission or is the owner of the guild
+ * @param {string} communication_disabled_until When the user's [timeout](https://support.discord.com/hc/en-us/articles/4413305239191-Time-Out-FAQ) will expire and the user will be able to communicate in the guild again (up to 28 days in the future), set to null to remove timeout
+ * Will throw a 403 error if the user has the ADMINISTRATOR permission or is the owner of the guild
  * @returns {object}
  */
-module.exports = async (guild_id, user_id, nick, roles, mute, deaf, channel_id, communication_disabled_until) => {
+module.exports = async (guild_id, user_id, nick, roles, mute, deaf, channel_id, communication_disabled_until, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

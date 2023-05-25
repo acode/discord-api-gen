@@ -10,7 +10,7 @@ const io = require('io');
  * @param {string} thread_id Id of the thread the message is in
  * @returns {object}
  */
-module.exports = async (webhook_id, webhook_token, message_id, thread_id = null) => {
+module.exports = async (webhook_id, webhook_token, message_id, thread_id = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

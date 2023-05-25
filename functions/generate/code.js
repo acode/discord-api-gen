@@ -31,12 +31,19 @@ try {
 
 const writeParam = (param, indent = 0) => {
   let description = (param.description || '').split('\n');
-  let lines = [`@${indent === 0 ? 'param' : '  '.repeat(indent - 1)} {${param.type}} ${param.name} ${description[0]}`];
+  let lines = [`@${indent === 0 ? 'param' : '  '.repeat(indent - 1)} {${param.type}} ${param.name || ''} ${description[0]}`];
   lines = lines.concat(description.slice(1));
   if (param.schema) {
-    lines = lines.concat(param.schema.map(param => writeParam(param, indent + 1)))
+    lines = [].concat.apply(
+      lines,
+      param.schema.map(param => writeParam(param, indent + 1))
+    );
   }
-  return lines.map(line => ` * ${line}`);
+  return lines.filter(line => line.trim()).map(line => {
+    return line.startsWith(' * ')
+      ? line
+      : ` * ${line}`;
+  });
 };
 
 const namespaces = [];
@@ -52,14 +59,17 @@ schema.forEach(endpoint => {
   let descriptionLines = [endpoint.title].concat(endpoint.description.split('\n'));
 
   const inputs = {
-    'description': descriptionLines.map(line => ` * ${line}`).join('\n'),
+    'description': descriptionLines.filter(line => line.trim()).map(line => ` * ${line}`).join('\n'),
     'params': (
       allParams.length
-        ? `\n${allParams.map(param => writeParam(param)).join('\n')}`
+        ? `\n${[].concat.apply([], allParams.map(param => writeParam(param))).join('\n')}`
         : ''
     ),
     'returns': '\n * @returns {object}',
-    'paramsList': allParams.map(param => `${param.name}${param.optional ? ' = null' : ''}`).join(', '),
+    'paramsList': [].concat(
+      allParams.map(param => `${param.name}${param.optional ? ' = null' : ''}`),
+      'context'
+    ).join(', '),
     'supportsMultipart': endpoint.supports_multipart.toString(),
     'method': endpoint.method,
     'url': endpoint.url,

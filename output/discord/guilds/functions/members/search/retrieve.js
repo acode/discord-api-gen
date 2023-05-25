@@ -8,7 +8,7 @@ const io = require('io');
  * @param {integer} limit Max number of members to return (1-1000)
  * @returns {object}
  */
-module.exports = async (guild_id, query, limit) => {
+module.exports = async (guild_id, query, limit, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

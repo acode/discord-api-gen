@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} after The highest user id in the previous page
  * @returns {object}
  */
-module.exports = async (guild_id, limit, after) => {
+module.exports = async (guild_id, limit, after, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

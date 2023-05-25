@@ -9,7 +9,7 @@ const io = require('io');
  * @param {boolean} with_user_count Include number of users subscribed to this event
  * @returns {object}
  */
-module.exports = async (guild_id, guild_scheduled_event_id, with_user_count = null) => {
+module.exports = async (guild_id, guild_scheduled_event_id, with_user_count = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

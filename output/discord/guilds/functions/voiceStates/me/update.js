@@ -10,7 +10,7 @@ const io = require('io');
  * @param {string} request_to_speak_timestamp Sets the user's request to speak
  * @returns {object}
  */
-module.exports = async (guild_id, channel_id = null, suppress = null, request_to_speak_timestamp = null) => {
+module.exports = async (guild_id, channel_id = null, suppress = null, request_to_speak_timestamp = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

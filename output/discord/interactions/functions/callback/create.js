@@ -4,13 +4,12 @@ const io = require('io');
  * Create Interaction Response
  * Create a response to an Interaction from the gateway
  * Body is an [interaction response](https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object). Returns `204 No Content`.
- * 
  * This endpoint also supports file attachments similar to the webhook endpoints. Refer to [Uploading Files](https://discord.com/developers/docs/reference#uploading-files) for details on uploading files and `multipart/form-data` requests.
  * @param {string} interaction_id ID of the interaction
  * @param {string} interaction_token Continuation token for responding to the interaction
  * @returns {object}
  */
-module.exports = async (interaction_id, interaction_token) => {
+module.exports = async (interaction_id, interaction_token, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

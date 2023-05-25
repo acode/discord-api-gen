@@ -16,7 +16,7 @@ const io = require('io');
  * @param {object} image The cover image of the scheduled event
  * @returns {object}
  */
-module.exports = async (guild_id, channel_id = null, entity_metadata = null, name, privacy_level, scheduled_start_time, scheduled_end_time = null, description = null, entity_type, image = null) => {
+module.exports = async (guild_id, channel_id = null, entity_metadata = null, name, privacy_level, scheduled_start_time, scheduled_end_time = null, description = null, entity_type, image = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

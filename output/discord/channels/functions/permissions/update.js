@@ -11,7 +11,7 @@ const io = require('io');
  * @param {integer} type 0 for a role or 1 for a member
  * @returns {object}
  */
-module.exports = async (channel_id, overwrite_id, allow = null, deny = null, type) => {
+module.exports = async (channel_id, overwrite_id, allow = null, deny = null, type, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

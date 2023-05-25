@@ -8,7 +8,7 @@ const io = require('io');
  * @param {boolean} with_counts When `true`, will return approximate member and presence counts for the guild
  * @returns {object}
  */
-module.exports = async (guild_id, with_counts = null) => {
+module.exports = async (guild_id, with_counts = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

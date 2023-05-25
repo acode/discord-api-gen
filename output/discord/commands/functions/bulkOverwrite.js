@@ -6,7 +6,7 @@ const io = require('io');
  * Returns `200` and a list of [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) objects. Commands that do not already exist will count toward daily application command create limits.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

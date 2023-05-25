@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} webhook_token The secure token of the webhook (returned for Incoming Webhooks)
  * @returns {object}
  */
-module.exports = async (webhook_id, webhook_token) => {
+module.exports = async (webhook_id, webhook_token, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

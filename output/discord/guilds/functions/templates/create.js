@@ -9,7 +9,7 @@ const io = require('io');
  * @param {string} description Description for the template (0-120 characters)
  * @returns {object}
  */
-module.exports = async (guild_id, name, description = null) => {
+module.exports = async (guild_id, name, description = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

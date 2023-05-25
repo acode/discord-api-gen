@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} channel_id The id of the channel
  * @returns {object}
  */
-module.exports = async (channel_id) => {
+module.exports = async (channel_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

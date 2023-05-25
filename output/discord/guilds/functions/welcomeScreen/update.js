@@ -6,11 +6,12 @@ const io = require('io');
  * Requires the `MANAGE_GUILD` permission. Returns the updated [Welcome Screen](https://discord.com/developers/docs/resources/guild#welcome-screen-object) object. May fire a [Guild Update](https://discord.com/developers/docs/topics/gateway-events#guild-update) Gateway event.
  * @param {string} guild_id Guild id
  * @param {boolean} enabled Whether the welcome screen is enabled
- * @param {array} welcome_channels Channels linked in the welcome screen and their display options, *  * @ {object} undefined 
+ * @param {array} welcome_channels Channels linked in the welcome screen and their display options
+ * @ {object}  
  * @param {string} description The server description to show in the welcome screen
  * @returns {object}
  */
-module.exports = async (guild_id, enabled, welcome_channels, description) => {
+module.exports = async (guild_id, enabled, welcome_channels, description, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

@@ -5,18 +5,23 @@ const io = require('io');
  * Create a new global command
  * Returns `201` if a command with the same name does not already exist, or a `200` if it does (in which case the previous command will be overwritten). Both responses include an [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) object.
  * @param {string} name [Name of command](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming), 1-32 characters
- * @param {object} name_localizations Localization dictionary for the `name` field, * Values follow the same restrictions as `name`
+ * @param {object} name_localizations Localization dictionary for the `name` field
+ * Values follow the same restrictions as `name`
  * @param {string} description 1-100 character description for `CHAT_INPUT` commands
- * @param {object} description_localizations Localization dictionary for the `description` field, * Values follow the same restrictions as `description`
- * @param {array} options The parameters for the command, *  * @ {object} undefined 
+ * @param {object} description_localizations Localization dictionary for the `description` field
+ * Values follow the same restrictions as `description`
+ * @param {array} options The parameters for the command
+ * @ {object}  
  * @param {string} default_member_permissions Set of [permissions](#DOCS_TOPICS_PERMISSIONS) represented as a bit set
- * @param {boolean} dm_permission Indicates whether the command is available in DMs with the app, only for globally-scoped commands, * By default, commands are visible.
- * @param {boolean} default_permission Replaced by `default_member_permissions` and will be deprecated in the future, * Indicates whether the command is enabled by default when the app is added to a guild. Defaults to `true`
+ * @param {boolean} dm_permission Indicates whether the command is available in DMs with the app, only for globally-scoped commands
+ * By default, commands are visible.
+ * @param {boolean} default_permission Replaced by `default_member_permissions` and will be deprecated in the future
+ * Indicates whether the command is enabled by default when the app is added to a guild. Defaults to `true`
  * @param {any} type Type of command, defaults `1` if not set
  * @param {boolean} nsfw Indicates whether the command is [age-restricted](https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands)
  * @returns {object}
  */
-module.exports = async (name, name_localizations = null, description = null, description_localizations = null, options = null, default_member_permissions = null, dm_permission = null, default_permission = null, type = null, nsfw = null) => {
+module.exports = async (name, name_localizations = null, description = null, description_localizations = null, options = null, default_member_permissions = null, dm_permission = null, default_permission = null, type = null, nsfw = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

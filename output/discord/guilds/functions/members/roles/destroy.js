@@ -9,7 +9,7 @@ const io = require('io');
  * @param {string} role_id Role id
  * @returns {object}
  */
-module.exports = async (guild_id, user_id, role_id) => {
+module.exports = async (guild_id, user_id, role_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

@@ -6,7 +6,7 @@ const io = require('io');
  * Requires the `connections` OAuth2 scope.
  * @returns {object}
  */
-module.exports = async () => {
+module.exports = async (context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

@@ -8,7 +8,7 @@ const io = require('io');
  * @param {object} avatar If passed, modifies the user's avatar
  * @returns {object}
  */
-module.exports = async (username, avatar) => {
+module.exports = async (username, avatar, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';

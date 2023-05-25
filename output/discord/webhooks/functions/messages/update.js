@@ -4,9 +4,7 @@ const io = require('io');
  * Edit Webhook Message
  * Edits a previously-sent webhook message from the same token
  * Returns a [message](https://discord.com/developers/docs/resources/channel#message-object) object on success.
- * 
  * When the `content` field is edited, the `mentions` array in the message object will be reconstructed from scratch based on the new content. The `allowed_mentions` field of the edit request controls how this happens. If there is no explicit `allowed_mentions` in the edit request, the content will be parsed with _default_ allowances, that is, without regard to whether or not an `allowed_mentions` was present in the request that originally created the message.
- * 
  * Refer to [Uploading Files](https://discord.com/developers/docs/reference#uploading-files) for details on attachments and `multipart/form-data` requests.
  * Any provided files will be **appended** to the message. To remove or replace files you will have to supply the `attachments` field which specifies the files to retain on the message after edit.
  * @param {string} webhook_id The id of the webhook
@@ -14,13 +12,19 @@ const io = require('io');
  * @param {string} message_id Id of the message
  * @param {string} thread_id Id of the thread the message is in
  * @param {string} content The message contents (up to 2000 characters)
- * @param {array} embeds Embedded `rich` content, *  * @ {object} undefined 
+ * @param {array} embeds Embedded `rich` content
+ * @ {object}  
  * @param {object} allowed_mentions Allowed mentions for the message
- * @param {array} components The components to include with the message, *  * @ {object} action_row 
- * @param {array} attachments Attached files to keep and possible descriptions for new files, *  * @ {object} attachment , *  * @   {string} filename , *  * @   {string} description , *  * @   {buffer} file 
+ * @param {array} components The components to include with the message
+ * @ {object} action_row 
+ * @param {array} attachments Attached files to keep and possible descriptions for new files
+ * @ {object} attachment 
+ * @   {string} filename 
+ * @   {string} description 
+ * @   {buffer} file 
  * @returns {object}
  */
-module.exports = async (webhook_id, webhook_token, message_id, thread_id = null, content = null, embeds = null, allowed_mentions = null, components = null, attachments = null) => {
+module.exports = async (webhook_id, webhook_token, message_id, thread_id = null, content = null, embeds = null, allowed_mentions = null, components = null, attachments = null, context) => {
 
   const supportsMultipart = true;
   const _method = 'PATCH';

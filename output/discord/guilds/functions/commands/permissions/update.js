@@ -4,14 +4,14 @@ const io = require('io');
  * Edit Application Command Permissions
  * Edits command permissions for a specific command for your application in a guild and returns a [guild application command permissions](https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure) object
  * Fires an [Application Command Permissions Update](https://discord.com/developers/docs/topics/gateway-events#application-command-permissions-update) Gateway event.
- * 
  * You can add up to 100 permission overwrites for a command.
  * @param {string} guild_id Guild id
  * @param {string} command_id Unique ID of command
- * @param {array} permissions Permissions for the command in the guild, *  * @ {object} undefined 
+ * @param {array} permissions Permissions for the command in the guild
+ * @ {object}  
  * @returns {object}
  */
-module.exports = async (guild_id, command_id, permissions) => {
+module.exports = async (guild_id, command_id, permissions, context) => {
 
   const supportsMultipart = false;
   const _method = 'PUT';

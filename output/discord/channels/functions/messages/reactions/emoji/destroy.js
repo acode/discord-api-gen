@@ -10,7 +10,7 @@ const io = require('io');
  * @param {string} emoji [emoji id](https://discord.com/developers/docs/reference#image-formatting)
  * @returns {object}
  */
-module.exports = async (channel_id, message_id, emoji) => {
+module.exports = async (channel_id, message_id, emoji, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

@@ -4,24 +4,28 @@ const io = require('io');
  * Edit Message
  * Edit a previously sent message
  * The fields `content`, `embeds`, and `flags` can be edited by the original message author. Other users can only edit `flags` and only if they have the `MANAGE_MESSAGES` permission in the corresponding channel. When specifying flags, ensure to include all previously set flags/bits in addition to ones that you are modifying. Only `flags` documented in the table below may be modified by users (unsupported flag changes are currently ignored without error).
- * 
  * When the `content` field is edited, the `mentions` array in the message object will be reconstructed from scratch based on the new content. The `allowed_mentions` field of the edit request controls how this happens. If there is no explicit `allowed_mentions` in the edit request, the content will be parsed with _default_ allowances, that is, without regard to whether or not an `allowed_mentions` was present in the request that originally created the message.
- * 
  * Returns a [message](https://discord.com/developers/docs/resources/channel#message-object) object. Fires a [Message Update](https://discord.com/developers/docs/topics/gateway-events#message-update) Gateway event.
- * 
  * Refer to [Uploading Files](https://discord.com/developers/docs/reference#uploading-files) for details on attachments and `multipart/form-data` requests.
  * Any provided files will be **appended** to the message. To remove or replace files you will have to supply the `attachments` field which specifies the files to retain on the message after edit.
  * @param {string} channel_id The id of the channel
  * @param {string} message_id Id of the message
  * @param {string} content Message contents (up to 2000 characters)
- * @param {array} embeds Up to 10 `rich` embeds (up to 6000 characters), *  * @ {object} undefined 
+ * @param {array} embeds Up to 10 `rich` embeds (up to 6000 characters)
+ * @ {object}  
  * @param {integer} flags Edit the [flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) of a message (only `SUPPRESS_EMBEDS` can currently be set/unset)
  * @param {object} allowed_mentions Allowed mentions for the message
- * @param {array} components Components to include with the message, *  * @ {object} action_row 
- * @param {array} attachments Attached files to keep and possible descriptions for new files, * See [Uploading Files](https://discord.com/developers/docs/reference#uploading-files), *  * @ {object} attachment , *  * @   {string} filename , *  * @   {string} description , *  * @   {buffer} file 
+ * @param {array} components Components to include with the message
+ * @ {object} action_row 
+ * @param {array} attachments Attached files to keep and possible descriptions for new files
+ * See [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)
+ * @ {object} attachment 
+ * @   {string} filename 
+ * @   {string} description 
+ * @   {buffer} file 
  * @returns {object}
  */
-module.exports = async (channel_id, message_id, content = null, embeds = null, flags = null, allowed_mentions = null, components = null, attachments = null) => {
+module.exports = async (channel_id, message_id, content = null, embeds = null, flags = null, allowed_mentions = null, components = null, attachments = null, context) => {
 
   const supportsMultipart = true;
   const _method = 'PATCH';

@@ -10,15 +10,17 @@ const io = require('io');
  * @param {integer} verification_level [verification level](https://discord.com/developers/docs/resources/guild#guild-object-verification-level)
  * @param {integer} default_message_notifications Default [message notification level](https://discord.com/developers/docs/resources/guild#guild-object-default-message-notification-level)
  * @param {integer} explicit_content_filter [explicit content filter level](https://discord.com/developers/docs/resources/guild#guild-object-explicit-content-filter-level)
- * @param {array} roles New guild roles, *  * @ {object} undefined 
- * @param {array} channels New guild's channels, *  * @ {object} undefined 
+ * @param {array} roles New guild roles
+ * @ {object}  
+ * @param {array} channels New guild's channels
+ * @ {object}  
  * @param {string} afk_channel_id Id for afk channel
  * @param {integer} afk_timeout Afk timeout in seconds, can be set to: 60, 300, 900, 1800, 3600
  * @param {string} system_channel_id The id of the channel where guild notices such as welcome messages and boost events are posted
  * @param {integer} system_channel_flags [system channel flags](https://discord.com/developers/docs/resources/guild#guild-object-system-channel-flags)
  * @returns {object}
  */
-module.exports = async (name, region = null, icon = null, verification_level = null, default_message_notifications = null, explicit_content_filter = null, roles = null, channels = null, afk_channel_id = null, afk_timeout = null, system_channel_id = null, system_channel_flags = null) => {
+module.exports = async (name, region = null, icon = null, verification_level = null, default_message_notifications = null, explicit_content_filter = null, roles = null, channels = null, afk_channel_id = null, afk_timeout = null, system_channel_id = null, system_channel_flags = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

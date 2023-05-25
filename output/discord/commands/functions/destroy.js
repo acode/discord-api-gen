@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} command_id Unique ID of command
  * @returns {object}
  */
-module.exports = async (command_id) => {
+module.exports = async (command_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

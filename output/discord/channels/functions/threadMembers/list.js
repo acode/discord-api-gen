@@ -3,15 +3,15 @@ const io = require('io');
 /**
  * List Thread Members
  * Returns array of [thread members](https://discord.com/developers/docs/resources/channel#thread-member-object) objects that are members of the thread.
- * 
  * When `with_member` is set to `true`, the results will be paginated and each thread member object will include a `member` field containing a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object.
  * @param {string} channel_id The id of the channel
  * @param {boolean} with_member Whether to include a [guild member](https://discord.com/developers/docs/resources/guild#guild-member-object) object for each thread member
  * @param {string} after Get thread members after this user ID
- * @param {integer} limit Max number of thread members to return (1-100), * Defaults to 100.
+ * @param {integer} limit Max number of thread members to return (1-100)
+ * Defaults to 100.
  * @returns {object}
  */
-module.exports = async (channel_id, with_member = null, after = null, limit = null) => {
+module.exports = async (channel_id, with_member = null, after = null, limit = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

@@ -9,7 +9,7 @@ const io = require('io');
  * @param {object} icon Base64 128x128 image for the guild icon
  * @returns {object}
  */
-module.exports = async (template_code, name, icon = null) => {
+module.exports = async (template_code, name, icon = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

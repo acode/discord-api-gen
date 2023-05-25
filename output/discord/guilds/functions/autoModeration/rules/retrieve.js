@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} auto_moderation_rule_id The id of the rule
  * @returns {object}
  */
-module.exports = async (guild_id, auto_moderation_rule_id) => {
+module.exports = async (guild_id, auto_moderation_rule_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

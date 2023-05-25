@@ -9,10 +9,11 @@ const io = require('io');
  * @param {integer} auto_archive_duration Duration in minutes to automatically archive the thread after recent activity, can be set to: 60, 1440, 4320, 10080
  * @param {integer} rate_limit_per_user Amount of seconds a user has to wait before sending another message (0-21600)
  * @param {object} message Contents of the first message in the forum thread
- * @param {array} applied_tags The IDs of the set of tags that have been applied to a thread in a `GUILD_FORUM` channel, *  * @ {string} undefined 
+ * @param {array} applied_tags The IDs of the set of tags that have been applied to a thread in a `GUILD_FORUM` channel
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (channel_id, name, auto_archive_duration = null, rate_limit_per_user = null, message, applied_tags = null) => {
+module.exports = async (channel_id, name, auto_archive_duration = null, rate_limit_per_user = null, message, applied_tags = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

@@ -4,9 +4,7 @@ const io = require('io');
  * Get Channel Messages
  * Retrieves the messages in a channel
  * Returns an array of [message](https://discord.com/developers/docs/resources/channel#message-object) objects on success.
- * 
  * If operating on a guild channel, this endpoint requires the current user to have the `VIEW_CHANNEL` permission. If the channel is a voice channel, they must _also_ have the `CONNECT` permission.
- * 
  * If the current user is missing the `READ_MESSAGE_HISTORY` permission in the channel, then no messages will be returned.
  * @param {string} channel_id The id of the channel
  * @param {string} around Get messages around this message ID
@@ -15,7 +13,7 @@ const io = require('io');
  * @param {integer} limit Max number of messages to return (1-100)
  * @returns {object}
  */
-module.exports = async (channel_id, around = null, before = null, after = null, limit = null) => {
+module.exports = async (channel_id, around = null, before = null, after = null, limit = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

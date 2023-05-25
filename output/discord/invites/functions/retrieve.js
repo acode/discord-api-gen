@@ -9,7 +9,7 @@ const io = require('io');
  * @param {string} guild_scheduled_event_id The guild scheduled event to include with the invite
  * @returns {object}
  */
-module.exports = async (invite_code, with_counts = null, with_expiration = null, guild_scheduled_event_id = null) => {
+module.exports = async (invite_code, with_counts = null, with_expiration = null, guild_scheduled_event_id = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

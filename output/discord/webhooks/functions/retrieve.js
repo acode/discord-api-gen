@@ -6,7 +6,7 @@ const io = require('io');
  * @param {string} webhook_id The id of the webhook
  * @returns {object}
  */
-module.exports = async (webhook_id) => {
+module.exports = async (webhook_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

@@ -9,7 +9,7 @@ const io = require('io');
  * @param {integer} limit Optional maximum number of threads to return
  * @returns {object}
  */
-module.exports = async (channel_id, before = null, limit = null) => {
+module.exports = async (channel_id, before = null, limit = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

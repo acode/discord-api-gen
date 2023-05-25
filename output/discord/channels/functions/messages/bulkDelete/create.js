@@ -4,13 +4,13 @@ const io = require('io');
  * Bulk Delete Messages
  * Delete multiple messages in a single request
  * This endpoint can only be used on guild channels and requires the `MANAGE_MESSAGES` permission. Returns a 204 empty response on success. Fires a [Message Delete Bulk](https://discord.com/developers/docs/topics/gateway-events#message-delete-bulk) Gateway event.
- * 
  * Any message IDs given that do not exist or are invalid will count towards the minimum and maximum message count (currently 2 and 100 respectively).
  * @param {string} channel_id The id of the channel
- * @param {array} messages An array of message ids to delete (2-100), *  * @ {string} undefined 
+ * @param {array} messages An array of message ids to delete (2-100)
+ * @ {string}  
  * @returns {object}
  */
-module.exports = async (channel_id, messages) => {
+module.exports = async (channel_id, messages, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

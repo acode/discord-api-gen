@@ -12,18 +12,20 @@ const io = require('io');
  * @param {integer} user_limit The user limit of the voice channel
  * @param {integer} rate_limit_per_user Amount of seconds a user has to wait before sending another message (0-21600); bots, as well as users with the permission `manage_messages` or `manage_channel`, are unaffected
  * @param {integer} position Sorting position of the channel
- * @param {array} permission_overwrites The channel's permission overwrites, *  * @ {object} undefined 
+ * @param {array} permission_overwrites The channel's permission overwrites
+ * @ {object}  
  * @param {string} parent_id Id of the parent category for a channel
  * @param {boolean} nsfw Whether the channel is nsfw
  * @param {string} rtc_region Channel [voice region](#https://discord.com/developers/docs/resources/voicevoice-region-object) id of the voice or stage channel, automatic when set to null
  * @param {integer} video_quality_mode The camera [video quality mode](https://discord.com/developers/docs/resources/channel#channel-object-video-quality-modes) of the voice channel
  * @param {integer} default_auto_archive_duration The default duration that the clients use (not the API) for newly created threads in the channel, in minutes, to automatically archive the thread after recent activity
  * @param {object} default_reaction_emoji Emoji to show in the add reaction button on a thread in a `GUILD_FORUM` channel
- * @param {array} available_tags Set of tags that can be used in a `GUILD_FORUM` channel, *  * @ {object} undefined 
+ * @param {array} available_tags Set of tags that can be used in a `GUILD_FORUM` channel
+ * @ {object}  
  * @param {integer} default_sort_order The [default sort order type](https://discord.com/developers/docs/resources/channel#channel-object-sort-order-types) used to order posts in `GUILD_FORUM` channels
  * @returns {object}
  */
-module.exports = async (guild_id, name, type, topic, bitrate, user_limit, rate_limit_per_user, position, permission_overwrites, parent_id, nsfw, rtc_region, video_quality_mode, default_auto_archive_duration, default_reaction_emoji, available_tags, default_sort_order) => {
+module.exports = async (guild_id, name, type, topic, bitrate, user_limit, rate_limit_per_user, position, permission_overwrites, parent_id, nsfw, rtc_region, video_quality_mode, default_auto_archive_duration, default_reaction_emoji, available_tags, default_sort_order, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

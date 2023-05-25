@@ -4,7 +4,6 @@ const io = require('io');
  * Start Thread from Message
  * Creates a new thread from an existing message
  * Returns a [channel](https://discord.com/developers/docs/resources/channel#channel-object) on success, and a 400 BAD REQUEST on invalid parameters. Fires a [Thread Create](https://discord.com/developers/docs/topics/gateway-events#thread-create) and a [Message Update](https://discord.com/developers/docs/topics/gateway-events#message-update) Gateway event.
- * 
  * When called on a `GUILD_TEXT` channel, creates a `PUBLIC_THREAD`. When called on a `GUILD_ANNOUNCEMENT` channel, creates a `ANNOUNCEMENT_THREAD`. Does not work on a [`GUILD_FORUM`](https://discord.com/developers/docs/resources/channel#start-thread-in-forum-channel) channel. The id of the created thread will be the same as the id of the source message, and as such a message can only have a single thread created from it.
  * @param {string} channel_id The id of the channel
  * @param {string} message_id Id of the message
@@ -13,7 +12,7 @@ const io = require('io');
  * @param {integer} rate_limit_per_user Amount of seconds a user has to wait before sending another message (0-21600)
  * @returns {object}
  */
-module.exports = async (channel_id, message_id, name, auto_archive_duration = null, rate_limit_per_user = null) => {
+module.exports = async (channel_id, message_id, name, auto_archive_duration = null, rate_limit_per_user = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

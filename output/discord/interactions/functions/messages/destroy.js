@@ -2,12 +2,11 @@ const io = require('io');
 
 /**
  * Delete Followup Message
- * 
  * @param {string} interaction_token Continuation token for responding to the interaction
  * @param {string} message_id Id of the message
  * @returns {object}
  */
-module.exports = async (interaction_token, message_id) => {
+module.exports = async (interaction_token, message_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'DELETE';

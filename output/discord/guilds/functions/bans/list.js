@@ -10,7 +10,7 @@ const io = require('io');
  * @param {string} after Consider only users after given user id
  * @returns {object}
  */
-module.exports = async (guild_id, limit = null, before = null, after = null) => {
+module.exports = async (guild_id, limit = null, before = null, after = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'GET';

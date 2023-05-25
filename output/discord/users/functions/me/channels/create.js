@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} recipient_id The recipient to open a DM channel with
  * @returns {object}
  */
-module.exports = async (recipient_id) => {
+module.exports = async (recipient_id, context) => {
 
   const supportsMultipart = false;
   const _method = 'POST';

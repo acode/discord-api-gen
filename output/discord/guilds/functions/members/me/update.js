@@ -8,7 +8,7 @@ const io = require('io');
  * @param {string} nick Value to set user's nickname to
  * @returns {object}
  */
-module.exports = async (guild_id, nick = null) => {
+module.exports = async (guild_id, nick = null, context) => {
 
   const supportsMultipart = false;
   const _method = 'PATCH';
