@@ -1,5 +1,5 @@
 {
-  "name": "discord/canary",
+  "name": "discord/stickerPacks",
   "timeout": 60000,
   "connector": true,
   "events": {},

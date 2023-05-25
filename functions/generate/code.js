@@ -4,7 +4,7 @@ const childProcess = require('child_process');
 
 const writeCode = require('../../helpers/discord/write_code.js');
 
-const OUTPUT_ROOT = './output/service';
+const OUTPUT_ROOT = './output/discord';
 const SCHEMA_PATH = './output/schema.json';
 const ENDPOINT_TEMPLATE_PATH = './helpers/discord/templates/endpoint.js';
 const TEMPLATE_PATH = './helpers/discord/templates/root';
@@ -39,14 +39,7 @@ const writeParam = (param, indent = 0) => {
   return lines.map(line => ` * ${line}`);
 };
 
-let files = fs.readdirSync(TEMPLATE_PATH);
-files.forEach(filename => {
-  let readpath = path.join(TEMPLATE_PATH, filename);
-  let file = fs.readFileSync(readpath);
-  let filepath = path.join(OUTPUT_ROOT, filename);
-  console.log(`Writing "${filename}" (${filepath}) ...`);
-  fs.writeFileSync(filepath, file);
-});
+const namespaces = [];
 
 schema.forEach(endpoint => {
 
@@ -94,8 +87,12 @@ schema.forEach(endpoint => {
   });
 
   fileString = fileString.replace(/\n\n+/gi, '\n\n');
-
-  let filename = `functions/${endpoint.name}.js`;
+  let namespace = endpoint.name.split('/')[0];
+  let name = endpoint.name.split('/').slice(1).join('/');
+  let filename = `${namespace}/functions/${name}.js`;
+  if (namespaces.indexOf(namespace) === -1) {
+    namespaces.push(namespace);
+  }
 
   let fileparts = filename.split('/');
   for (let i = 0; i < fileparts.length - 1; i++) {
@@ -109,6 +106,26 @@ schema.forEach(endpoint => {
   console.log(`Writing "${endpoint.name}" (${filepath}) ...`);
   fs.writeFileSync(filepath, fileString);
 
+});
+
+let files = fs.readdirSync(TEMPLATE_PATH);
+namespaces.forEach(namespace => {
+  files.forEach(filename => {
+    let readpath = path.join(TEMPLATE_PATH, filename);
+    let file = fs.readFileSync(readpath);
+    if (filename === 'stdlib.json') {
+      let json = JSON.parse(file.toString());
+      json.name = [json.name.split('/')[0], namespace].join('/');
+      file = Buffer.from(JSON.stringify(json, null, 2));
+    } else if (filename === 'package.json') {
+      let json = JSON.parse(file.toString());
+      json.name = [json.name.split('-')[0], namespace].join('-');
+      file = Buffer.from(JSON.stringify(json, null, 2));
+    }
+    let filepath = path.join(OUTPUT_ROOT, namespace, filename);
+    console.log(`Writing "${filename}" (${filepath}) ...`);
+    fs.writeFileSync(filepath, file);
+  });
 });
 
 console.log(`Wrote ${schema.length} endpoints!`);

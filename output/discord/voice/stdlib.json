@@ -1,0 +1,7 @@
+{
+  "name": "discord/voice",
+  "timeout": 60000,
+  "connector": true,
+  "events": {},
+  "memory": 3072
+}

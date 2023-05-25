@@ -1,0 +1,9 @@
+{
+  "name": "discord-roleConnections",
+  "author": "autocode",
+  "publish": false,
+  "dependencies": {
+    "lib": "latest",
+    "io": "^1.4.1"
+  }
+}
