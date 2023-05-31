@@ -11,6 +11,19 @@ if (!fs.existsSync(OUTPUT_ROOT)) {
   fs.mkdirSync(OUTPUT_ROOT);
 }
 
+const localEnv = {};
+
+if (context.params.DISCORD_BOT_TOKEN) {
+  localEnv.DISCORD_BOT_TOKEN = context.params.DISCORD_BOT_TOKEN;
+}
+if (context.params.DISCORD_CLIENT_ID) {
+  localEnv.DISCORD_CLIENT_ID = context.params.DISCORD_CLIENT_ID;
+}
+
+if (localEnv.DISCORD_BOT_TOKEN ^ localEnv.DISCORD_CLIENT_ID) {
+  throw new Error(`Must provide both "DISCORD_BOT_TOKEN" and "DISCORD_CLIENT_ID" or neither`);
+}
+
 let schema;
 let template;
 
@@ -128,6 +141,12 @@ namespaces.forEach(namespace => {
     } else if (filename === 'package.json') {
       let json = JSON.parse(file.toString());
       json.name = [json.name.split('-')[0], namespace].join('-');
+      file = Buffer.from(JSON.stringify(json, null, 2));
+    } else if (filename === 'env.json') {
+      let json = JSON.parse(file.toString());
+      Object.keys(localEnv).forEach(key => {
+        json.local[key] = localEnv[key];
+      });
       file = Buffer.from(JSON.stringify(json, null, 2));
     }
     let filepath = path.join(OUTPUT_ROOT, namespace, filename);

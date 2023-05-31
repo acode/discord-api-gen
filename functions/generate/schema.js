@@ -76,6 +76,8 @@ if (missingObjectTypes.length) {
   );
 }
 
+fs.writeFileSync('./output/objects.json', JSON.stringify(objects, null, 2));
+
 // Reset type reference...
 reference.types = {};
 let endpoints = [];

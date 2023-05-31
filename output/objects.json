@@ -1,0 +1,5436 @@
+{
+  "application_command": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique ID of command",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "any",
+      "description": "[Type of command](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types), defaults to `1`",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": false,
+      "enum_reference": "one_of_application_command"
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "ID of the parent application",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "Guild ID of the command, if not global",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "[Name of command](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming), 1-32 characters",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name_localizations",
+      "type": "object",
+      "description": "Localization dictionary for `name` field\nValues follow the same restrictions as `name`",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description for `CHAT_INPUT` commands, 1-100 characters\nEmpty string for `USER` and `MESSAGE` commands",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description_localizations",
+      "type": "object",
+      "description": "Localization dictionary for `description` field\nValues follow the same restrictions as `description`",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "Parameters for the command, max of 25",
+      "valid types": "CHAT_INPUT",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_option"
+        }
+      ]
+    },
+    {
+      "name": "default_member_permissions",
+      "type": "string",
+      "description": "Set of [permissions](#DOCS_TOPICS_PERMISSIONS) represented as a bit set",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "dm_permission",
+      "type": "boolean",
+      "description": "Indicates whether the command is available in DMs with the app, only for globally-scoped commands\nBy default, commands are visible.",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "default_permission",
+      "type": "boolean",
+      "description": "Not recommended for use as field will soon be deprecated\nIndicates whether the command is enabled by default when the app is added to a guild, defaults to `true`",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "nsfw",
+      "type": "boolean",
+      "description": "Indicates whether the command is [age-restricted](https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands), defaults to `false`",
+      "valid types": "all",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "Autoincrementing version identifier updated during substantial record changes",
+      "valid types": "all",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "application_command_option": [
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Type of option",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "one_of_application_command_option"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "[1-32 character name](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name_localizations",
+      "type": "object",
+      "description": "Localization dictionary for the `name` field\nValues follow the same restrictions as `name`",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "1-100 character description",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description_localizations",
+      "type": "object",
+      "description": "Localization dictionary for the `description` field\nValues follow the same restrictions as `description`",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "If the parameter is required or optional--default `false`",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "choices",
+      "type": "array",
+      "description": "Choices for `STRING`, `INTEGER`, and `NUMBER` types for the user to pick from, max 25",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_option_choice"
+        }
+      ]
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "If the option is a subcommand or subcommand group type, these nested options will be the parameters",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_option"
+        }
+      ]
+    },
+    {
+      "name": "channel_types",
+      "type": "array",
+      "description": "If the option is a channel type, the channels shown will be restricted to these types",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "any",
+          "enum_reference": "channel"
+        }
+      ]
+    },
+    {
+      "name": "min_value",
+      "type": "float",
+      "description": "If the option is an `INTEGER` or `NUMBER` type, the minimum value permitted",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "max_value",
+      "type": "float",
+      "description": "If the option is an `INTEGER` or `NUMBER` type, the maximum value permitted",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "min_length",
+      "type": "integer",
+      "description": "For option type `STRING`, the minimum allowed length (minimum of `0`, maximum of `6000`)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "max_length",
+      "type": "integer",
+      "description": "For option type `STRING`, the maximum allowed length (minimum of `1`, maximum of `6000`)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "autocomplete",
+      "type": "boolean",
+      "description": "If autocomplete interactions are enabled for this `STRING`, `INTEGER`, or `NUMBER` type option",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "application_command_option_choice": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "1-100 character choice name",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name_localizations",
+      "type": "object",
+      "description": "Localization dictionary for the `name` field\nValues follow the same restrictions as `name`",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "description": "Value for the choice, up to 100 characters if string",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "guild_application_command_permission": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the command or the application ID",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "ID of the application the command belongs to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "ID of the guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "array",
+      "description": "Permissions for the command in the guild, max of 100",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_permission"
+        }
+      ]
+    }
+  ],
+  "application_command_permission": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the role, user, or channel\nIt can also be a [permission constant](https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-constants)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Role (`1`), user (`2`), or channel (`3`)",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "application_command_permission"
+    },
+    {
+      "name": "permission",
+      "type": "boolean",
+      "description": "`true` to allow, `false`, to disallow",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "button": [
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "`2` for a button",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "style",
+      "type": "integer",
+      "description": "A [button style](https://discord.com/developers/docs/interactions/message-components#button-object-button-styles)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Text that appears on the button; max 80 characters",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "emoji",
+      "type": "object",
+      "description": "`name`, `id`, and `animated`",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "emoji"
+    },
+    {
+      "name": "custom_id",
+      "type": "string",
+      "description": "Developer-defined identifier for the button; max 100 characters",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "URL for link-style buttons",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "Whether the button is disabled (defaults to `false`)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "select_menu": [
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "[Type](https://discord.com/developers/docs/interactions/message-components#component-object-component-types) of select menu component (text: `3`, user: `5`, role: `6`, mentionable: `7`, channels: `8`)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "custom_id",
+      "type": "string",
+      "description": "ID for the select menu; max 100 characters",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "Specified choices in a select menu (only required and available for string selects (type `3`); max 25",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "select_option"
+        }
+      ]
+    },
+    {
+      "name": "channel_types",
+      "type": "array",
+      "description": "List of channel types to include in the channel select component (type `8`)",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "any",
+          "enum_reference": "channel"
+        }
+      ]
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text if nothing is selected; max 150 characters",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "min_values",
+      "type": "integer",
+      "description": "Minimum number of items that must be chosen (defaults to 1); min 0, max 25",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "max_values",
+      "type": "integer",
+      "description": "Maximum number of items that can be chosen (defaults to 1); max 25",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "Whether select menu is disabled (defaults to `false`)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "select_option": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "User-facing name of the option; max 100 characters",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Dev-defined value of the option; max 100 characters",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Additional description of the option; max 100 characters",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "emoji",
+      "type": "object",
+      "description": "`id`, `name`, and `animated`",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "emoji"
+    },
+    {
+      "name": "default",
+      "type": "boolean",
+      "description": "Will show this option as selected by default",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "text_input": [
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "`4` for a text input",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "custom_id",
+      "type": "string",
+      "description": "Developer-defined identifier for the input; max 100 characters",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "style",
+      "type": "integer",
+      "description": "The [Text Input Style](https://discord.com/developers/docs/interactions/message-components#text-inputs-text-input-styles)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Label for this component; max 45 characters",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "min_length",
+      "type": "integer",
+      "description": "Minimum input length for a text input; min 0, max 4000",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "max_length",
+      "type": "integer",
+      "description": "Maximum input length for a text input; min 1, max 4000",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "Whether this component is required to be filled (defaults to `true`)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Pre-filled value for this component; max 4000 characters",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Custom placeholder text if the input is empty; max 100 characters",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "interaction": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the interaction",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "ID of the application this interaction is for",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Type of interaction",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "interaction"
+    },
+    {
+      "name": "data",
+      "type": "object",
+      "description": "Interaction data payload",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "Guild that the interaction was sent from",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "channel",
+      "type": "object",
+      "description": "Channel that the interaction was sent from",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "channel"
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "Channel that the interaction was sent from",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "Guild member data for the invoking user, including permissions",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "guild_member"
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User object for the invoking user, if invoked in a DM",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "token",
+      "type": "string",
+      "description": "Continuation token for responding to the interaction",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "version",
+      "type": "integer",
+      "description": "Read-only property, always `1`",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "message",
+      "type": "object",
+      "description": "For components, the message they were attached to",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "message"
+    },
+    {
+      "name": "app_permissions",
+      "type": "string",
+      "description": "Bitwise set of permissions the app or bot has within the channel the interaction was sent from",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "description": "Selected [language](https://discord.com/developers/docs/reference#locales) of the invoking user",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "guild_locale",
+      "type": "string",
+      "description": "[Guild's preferred locale](https://discord.com/developers/docs/resources/guild#guild-object), if invoked in a guild",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "application_command_data": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The [`ID`](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure) of the invoked command",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The [`name`](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure) of the invoked command",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "The [`type`](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure) of the invoked command",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "resolved",
+      "type": "object",
+      "description": "Converted users + roles + channels + attachments",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "resolved_data"
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "The params + values from the user",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_interaction_data_option"
+        }
+      ]
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The id of the guild the command is registered to",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "target_id",
+      "type": "string",
+      "description": "Id of the user or message targeted by a [user](https://discord.com/developers/docs/interactions/application-commands#user-commands) or [message](https://discord.com/developers/docs/interactions/application-commands#message-commands) command",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "message_component_data": [
+    {
+      "name": "custom_id",
+      "type": "string",
+      "description": "The [`custom_id`](https://discord.com/developers/docs/interactions/message-components#custom-id) of the component",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "component_type",
+      "type": "integer",
+      "description": "The [type](https://discord.com/developers/docs/interactions/message-components#component-object-component-types) of the component",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "values",
+      "type": "array",
+      "description": "Values the user selected in a [select menu](https://discord.com/developers/docs/interactions/message-components#select-menu-object) component",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "modal_submit_data": [
+    {
+      "name": "custom_id",
+      "type": "string",
+      "description": "The [`custom_id`](https://discord.com/developers/docs/interactions/message-components#custom-id) of the modal",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "components",
+      "type": "array",
+      "description": "The values submitted by the user",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "message_component",
+          "name": "action_row"
+        }
+      ]
+    }
+  ],
+  "resolved_data": [
+    {
+      "name": "users",
+      "type": "object",
+      "description": "The ids and User objects",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "members",
+      "type": "object",
+      "description": "The ids and partial Member objects",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "roles",
+      "type": "object",
+      "description": "The ids and Role objects",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "channels",
+      "type": "object",
+      "description": "The ids and partial Channel objects",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "messages",
+      "type": "object",
+      "description": "The ids and partial Message objects",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "attachments",
+      "type": "object",
+      "description": "The ids and attachment objects",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "application_command_interaction_data_option": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the parameter",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "Value of [application command option type](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "description": "Value of the option resulting from user input",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "Present if this option is a group or subcommand",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command_interaction_data_option"
+        }
+      ]
+    },
+    {
+      "name": "focused",
+      "type": "boolean",
+      "description": "`true` if this option is the currently focused option for autocomplete",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "message_interaction": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the interaction",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Type of interaction",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "interaction"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure), including subcommands and subcommand groups",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User who invoked the interaction",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "Member who invoked the interaction in the guild",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "member"
+    }
+  ],
+  "interaction_response": [
+    {
+      "name": "type",
+      "type": "any",
+      "description": "The type of response",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "interaction_callback"
+    },
+    {
+      "name": "data",
+      "type": "object",
+      "description": "An optional response message",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "interaction_callback_data"
+    }
+  ],
+  "interaction_callback_data": [
+    {
+      "name": "tts",
+      "type": "boolean",
+      "description": "Is the response TTS",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Message content",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "embeds",
+      "type": "array",
+      "description": "Supports up to 10 embeds",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "embed"
+        }
+      ]
+    },
+    {
+      "name": "allowed_mentions",
+      "type": "object",
+      "description": "[allowed mentions](https://discord.com/developers/docs/resources/channel#allowed-mentions-object) object",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "allowed_mention"
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "[message flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) combined as a [bitfield](https://en.wikipedia.org/wiki/Bit_field) (only `SUPPRESS_EMBEDS` and `EPHEMERAL` can be set)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "components",
+      "type": "array",
+      "description": "Message components",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "component",
+          "name": "action_row"
+        }
+      ]
+    },
+    {
+      "name": "attachments",
+      "type": "array",
+      "description": "Attachment objects with filename and description",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "attachment"
+        }
+      ]
+    }
+  ],
+  "application": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "The [icon hash](https://discord.com/developers/docs/reference#image-formatting) of the app",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "rpc_origins",
+      "type": "array",
+      "description": "An array of rpc origin urls, if rpc is enabled",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bot_public",
+      "type": "boolean",
+      "description": "When false only app owner can join the app's bot to guilds",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "bot_require_code_grant",
+      "type": "boolean",
+      "description": "When true the app's bot will only join upon completion of the full oauth2 code grant flow",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "terms_of_service_url",
+      "type": "string",
+      "description": "The url of the app's terms of service",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "privacy_policy_url",
+      "type": "string",
+      "description": "The url of the app's privacy policy",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "owner",
+      "type": "object",
+      "description": "Partial user object containing info on the owner of the application",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "user"
+    },
+    {
+      "name": "summary *(deprecated",
+      "type": "string",
+      "description": "**deprecated and will be removed in v11.** An empty string.",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "verify_key",
+      "type": "string",
+      "description": "The hex encoded key for verification in interactions and the GameSDK's [GetTicket](https://discord.com/developers/docs/game-sdk/applications#getticket)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "team",
+      "type": "object",
+      "description": "If the application belongs to a team, this will be a list of the members of that team",
+      "optional": false,
+      "isNullable": true,
+      "object_reference": "team"
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "If this application is a game sold on Discord, this field will be the guild to which it has been linked",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "primary_sku_id",
+      "type": "string",
+      "description": "If this application is a game sold on Discord, this field will be the id of the \"Game SKU\" that is created, if exists",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "slug",
+      "type": "string",
+      "description": "If this application is a game sold on Discord, this field will be the URL slug that links to the store page",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "cover_image",
+      "type": "string",
+      "description": "The application's default rich presence invite [cover image hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "The application's public [flags](https://discord.com/developers/docs/resources/application#application-object-application-flags)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "description": "Up to 5 tags describing the content and functionality of the application",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "install_params",
+      "type": "object",
+      "description": "Settings for the application's default in-app authorization link, if enabled",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "install_param"
+    },
+    {
+      "name": "custom_install_url",
+      "type": "string",
+      "description": "The application's default custom authorization link, if enabled",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "role_connections_verification_url",
+      "type": "string",
+      "description": "The application's role connection verification entry point, which when configured will render the app as a verification method in the guild role verification configuration",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "install_param": [
+    {
+      "name": "scopes",
+      "type": "array",
+      "description": "The [scopes](https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-scopes) to add the application to the server with",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "permissions",
+      "type": "string",
+      "description": "The [permissions](#DOCS_TOPICS_PERMISSIONS) to request for the bot role",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "application_role_connection_metadata": [
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Type of metadata value",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "application_role_connection_metadata"
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "description": "Dictionary key for the metadata field (must be `a-z`, `0-9`, or `_` characters; 1-50 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the metadata field (1-100 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name_localizations",
+      "type": "object",
+      "description": "Translations of the name",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description of the metadata field (1-200 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description_localizations",
+      "type": "object",
+      "description": "Translations of the description",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "audit_log": [
+    {
+      "name": "application_commands",
+      "type": "array",
+      "description": "List of application commands referenced in the audit log",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "application_command"
+        }
+      ]
+    },
+    {
+      "name": "audit_log_entries",
+      "type": "array",
+      "description": "List of audit log entries, sorted from most to least recent",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "audit_log_entry"
+        }
+      ]
+    },
+    {
+      "name": "auto_moderation_rules",
+      "type": "array",
+      "description": "List of auto moderation rules referenced in the audit log",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "auto_moderation_rule"
+        }
+      ]
+    },
+    {
+      "name": "guild_scheduled_events",
+      "type": "array",
+      "description": "List of guild scheduled events referenced in the audit log",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "guild_scheduled_event"
+        }
+      ]
+    },
+    {
+      "name": "integrations",
+      "type": "array",
+      "description": "List of partial integration objects",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "integration"
+        }
+      ]
+    },
+    {
+      "name": "threads",
+      "type": "array",
+      "description": "List of threads referenced in the audit log\\*",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "thread-specific_channel"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "type": "array",
+      "description": "List of users referenced in the audit log",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "user"
+        }
+      ]
+    },
+    {
+      "name": "webhooks",
+      "type": "array",
+      "description": "List of webhooks referenced in the audit log",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "webhook"
+        }
+      ]
+    }
+  ],
+  "audit_log_entry": [
+    {
+      "name": "target_id",
+      "type": "string",
+      "description": "ID of the affected entity (webhook, user, role, etc.)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "changes",
+      "type": "array",
+      "description": "Changes made to the target_id",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "audit_log_change"
+        }
+      ]
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "description": "User or app that made the changes",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the entry",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "action_type",
+      "type": "any",
+      "description": "Type of action that occurred",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "audit_log_event"
+    },
+    {
+      "name": "options",
+      "type": "object",
+      "description": "Additional info for certain event types",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "optional_audit_entry_info"
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "Reason for the change (1-512 characters)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "optional_audit_entry_info": [
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "ID of the app whose permissions were targeted",
+      "event types": "APPLICATION_COMMAND_PERMISSION_UPDATE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "auto_moderation_rule_name",
+      "type": "string",
+      "description": "Name of the Auto Moderation rule that was triggered",
+      "event types": "AUTO_MODERATION_BLOCK_MESSAGE & AUTO_MODERATION_FLAG_TO_CHANNEL & AUTO_MODERATION_USER_COMMUNICATION_DISABLED",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "auto_moderation_rule_trigger_type",
+      "type": "string",
+      "description": "Trigger type of the Auto Moderation rule that was triggered",
+      "event types": "AUTO_MODERATION_BLOCK_MESSAGE & AUTO_MODERATION_FLAG_TO_CHANNEL & AUTO_MODERATION_USER_COMMUNICATION_DISABLED",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "Channel in which the entities were targeted",
+      "event types": "MEMBER_MOVE & MESSAGE_PIN & MESSAGE_UNPIN & MESSAGE_DELETE & STAGE_INSTANCE_CREATE & STAGE_INSTANCE_UPDATE & STAGE_INSTANCE_DELETE & AUTO_MODERATION_BLOCK_MESSAGE & AUTO_MODERATION_FLAG_TO_CHANNEL & AUTO_MODERATION_USER_COMMUNICATION_DISABLED",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "count",
+      "type": "string",
+      "description": "Number of entities that were targeted",
+      "event types": "MESSAGE_DELETE & MESSAGE_BULK_DELETE & MEMBER_DISCONNECT & MEMBER_MOVE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "delete_member_days",
+      "type": "string",
+      "description": "Number of days after which inactive members were kicked",
+      "event types": "MEMBER_PRUNE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the overwritten entity",
+      "event types": "CHANNEL_OVERWRITE_CREATE & CHANNEL_OVERWRITE_UPDATE & CHANNEL_OVERWRITE_DELETE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "members_removed",
+      "type": "string",
+      "description": "Number of members removed by the prune",
+      "event types": "MEMBER_PRUNE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "message_id",
+      "type": "string",
+      "description": "ID of the message that was targeted",
+      "event types": "MESSAGE_PIN & MESSAGE_UNPIN",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "role_name",
+      "type": "string",
+      "description": "Name of the role if type is `\"0\"` (not present if type is `\"1\"`)",
+      "event types": "CHANNEL_OVERWRITE_CREATE & CHANNEL_OVERWRITE_UPDATE & CHANNEL_OVERWRITE_DELETE",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Type of overwritten entity - role (`\"0\"`) or member (`\"1\"`)",
+      "event types": "CHANNEL_OVERWRITE_CREATE & CHANNEL_OVERWRITE_UPDATE & CHANNEL_OVERWRITE_DELETE",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "audit_log_change": [
+    {
+      "name": "new_value",
+      "type": "any",
+      "description": "New value of the key",
+      "optional": true,
+      "isNullable": false,
+      "enum_reference": "mixed_(matches_object_field'"
+    },
+    {
+      "name": "old_value",
+      "type": "any",
+      "description": "Old value of the key",
+      "optional": true,
+      "isNullable": false,
+      "enum_reference": "mixed_(matches_object_field'"
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "description": "Name of the changed entity, with a few [exceptions](https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-exceptions)",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "auto_moderation_rule": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of this rule",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The id of the guild which this rule belongs to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The rule name",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "creator_id",
+      "type": "string",
+      "description": "The user which first created this rule",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "event_type",
+      "type": "integer",
+      "description": "The rule [event type](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-event-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "trigger_type",
+      "type": "integer",
+      "description": "The rule [trigger type](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-trigger-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "trigger_metadata",
+      "type": "object",
+      "description": "The rule [trigger metadata](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object-trigger-metadata)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "actions",
+      "type": "array",
+      "description": "The actions which will execute when the rule is triggered",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "action"
+        }
+      ]
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "Whether the rule is enabled",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "exempt_roles",
+      "type": "array",
+      "description": "The role ids that should not be affected by the rule (Maximum of 20)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exempt_channels",
+      "type": "array",
+      "description": "The channel ids that should not be affected by the rule (Maximum of 50)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "trigger_metadata": [
+    {
+      "name": "keyword_filter",
+      "type": "array",
+      "associated trigger types": "KEYWORD",
+      "description": "Substrings which will be searched for in content (Maximum of 1000)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "regex_patterns",
+      "type": "array",
+      "associated trigger types": "KEYWORD",
+      "description": "Regular expression patterns which will be matched against content (Maximum of 10)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "presets",
+      "type": "array",
+      "associated trigger types": "KEYWORD_PRESET",
+      "description": "The internally pre-defined wordsets which will be searched for in content",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "any",
+          "enum_reference": "keyword_preset"
+        }
+      ]
+    },
+    {
+      "name": "allow_list",
+      "type": "array",
+      "associated trigger types": "KEYWORD, KEYWORD_PRESET",
+      "description": "Substrings which should not trigger the rule (Maximum of 100 or 1000)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mention_total_limit",
+      "type": "integer",
+      "associated trigger types": "MENTION_SPAM",
+      "description": "Total number of unique role and user mentions allowed per message (Maximum of 50)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mention_raid_protection_enabled",
+      "type": "boolean",
+      "associated trigger types": "MENTION_SPAM",
+      "description": "Whether to automatically detect mention raids",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "auto_moderation_action": [
+    {
+      "name": "type",
+      "type": "any",
+      "description": "The type of action",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "action"
+    },
+    {
+      "name": "metadata",
+      "type": "object",
+      "description": "Additional metadata needed during execution for this specific action type",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "action_metadata"
+    }
+  ],
+  "action_metadata": [
+    {
+      "name": "channel_id",
+      "type": "string",
+      "associated action types": "SEND_ALERT_MESSAGE",
+      "description": "Channel to which user content should be logged",
+      "constraints": "existing channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "duration_seconds",
+      "type": "integer",
+      "associated action types": "TIMEOUT",
+      "description": "Timeout duration in seconds",
+      "constraints": "maximum of 2419200 seconds (4 weeks)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "custom_message",
+      "type": "string",
+      "associated action types": "BLOCK_MESSAGE",
+      "description": "Additional explanation that will be shown to members whenever their message is blocked",
+      "constraints": "maximum of 150 characters",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "channel": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of this channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "The [type of channel](https://discord.com/developers/docs/resources/channel#channel-object-channel-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The id of the guild (may be missing for some channel objects received over gateway guild dispatches)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "position",
+      "type": "integer",
+      "description": "Sorting position of the channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "permission_overwrites",
+      "type": "array",
+      "description": "Explicit permission overwrites for members and roles",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "overwrite"
+        }
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the channel (1-100 characters)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "topic",
+      "type": "string",
+      "description": "The channel topic (0-4096 characters for `GUILD_FORUM` channels, 0-1024 characters for all others)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "nsfw",
+      "type": "boolean",
+      "description": "Whether the channel is nsfw",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "last_message_id",
+      "type": "string",
+      "description": "The id of the last message sent in this channel (or thread for `GUILD_FORUM` channels) (may not point to an existing or valid message or thread)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "bitrate",
+      "type": "integer",
+      "description": "The bitrate (in bits) of the voice channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "user_limit",
+      "type": "integer",
+      "description": "The user limit of the voice channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "rate_limit_per_user",
+      "type": "integer",
+      "description": "Amount of seconds a user has to wait before sending another message (0-21600); bots, as well as users with the permission `manage_messages` or `manage_channel`, are unaffected",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "recipients",
+      "type": "array",
+      "description": "The recipients of the DM",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "user"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "Icon hash of the group DM",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "owner_id",
+      "type": "string",
+      "description": "Id of the creator of the group DM or thread",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "Application id of the group DM creator if it is bot-created",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "managed",
+      "type": "boolean",
+      "description": "For group DM channels: whether the channel is managed by an application via the `gdm.join` OAuth2 scope",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "parent_id",
+      "type": "string",
+      "description": "For guild channels: id of the parent category for a channel (each parent category can contain up to 50 channels), for threads: id of the text channel this thread was created",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "last_pin_timestamp",
+      "type": "string",
+      "description": "When the last pinned message was pinned\nThis may be `null` in events such as `GUILD_CREATE` when a message is not pinned.",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "rtc_region",
+      "type": "string",
+      "description": "[voice region](#https://discord.com/developers/docs/resources/voicevoice-region-object) id for the voice channel, automatic when set to null",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "video_quality_mode",
+      "type": "integer",
+      "description": "The camera [video quality mode](https://discord.com/developers/docs/resources/channel#channel-object-video-quality-modes) of the voice channel, 1 when not present",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "message_count",
+      "type": "integer",
+      "description": "Number of messages (not including the initial message or deleted messages) in a thread.",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "member_count",
+      "type": "integer",
+      "description": "An approximate count of users in a thread, stops counting at 50",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "thread_metadata",
+      "type": "object",
+      "description": "Thread-specific fields not needed by other channels",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "thread_metadata"
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "Thread member object for the current user, if they have joined the thread, only included on certain API endpoints",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "thread_member"
+    },
+    {
+      "name": "default_auto_archive_duration",
+      "type": "integer",
+      "description": "Default duration, copied onto newly created threads, in minutes, threads will stop showing in the channel list after the specified period of inactivity, can be set to: 60, 1440, 4320, 10080",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "string",
+      "description": "Computed permissions for the invoking user in the channel, including overwrites, only included when part of the `resolved` data received on a slash command interaction",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "[channel flags](https://discord.com/developers/docs/resources/channel#channel-object-channel-flags) combined as a [bitfield](https://en.wikipedia.org/wiki/Bit_field)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "total_message_sent",
+      "type": "integer",
+      "description": "Number of messages ever sent in a thread, it's similar to `message_count` on message creation, but will not decrement the number when a message is deleted",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "available_tags",
+      "type": "array",
+      "description": "The set of tags that can be used in a `GUILD_FORUM` channel",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "tag"
+        }
+      ]
+    },
+    {
+      "name": "applied_tags",
+      "type": "array",
+      "description": "The IDs of the set of tags that have been applied to a thread in a `GUILD_FORUM` channel",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "default_reaction_emoji",
+      "type": "object",
+      "description": "The emoji to show in the add reaction button on a thread in a `GUILD_FORUM` channel",
+      "optional": true,
+      "isNullable": true,
+      "object_reference": "default_reaction"
+    },
+    {
+      "name": "default_thread_rate_limit_per_user",
+      "type": "integer",
+      "description": "The initial `rate_limit_per_user` to set on newly created threads in a channel\nthis field is copied to the thread at creation time and does not live update.",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "default_sort_order",
+      "type": "integer",
+      "description": "The [default sort order type](https://discord.com/developers/docs/resources/channel#channel-object-sort-order-types) used to order posts in `GUILD_FORUM` channels\nDefaults to `null`, which indicates a preferred sort order hasn't been set by a channel admin",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "default_forum_layout",
+      "type": "integer",
+      "description": "The [default forum layout view](https://discord.com/developers/docs/resources/channel#channel-object-forum-layout-types) used to display posts in `GUILD_FORUM` channels\nDefaults to `0`, which indicates a layout view has not been set by a channel admin",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "message": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the message",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "Id of the channel the message was sent in",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "author",
+      "type": "object",
+      "description": "The author of this message (not guaranteed to be a valid user, see below)",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Contents of the message",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "timestamp",
+      "type": "string",
+      "description": "When this message was sent",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "edited_timestamp",
+      "type": "string",
+      "description": "When this message was edited (or null if never)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "tts",
+      "type": "boolean",
+      "description": "Whether this was a TTS message",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mention_everyone",
+      "type": "boolean",
+      "description": "Whether this message mentions everyone",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mentions",
+      "type": "array",
+      "description": "Users specifically mentioned in the message",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "user"
+        }
+      ]
+    },
+    {
+      "name": "mention_roles",
+      "type": "array",
+      "description": "Roles specifically mentioned in this message",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mention_channels",
+      "type": "array",
+      "description": "Channels specifically mentioned in this message",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "channel_mention"
+        }
+      ]
+    },
+    {
+      "name": "attachments",
+      "type": "array",
+      "description": "Any attached files",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "attachment"
+        }
+      ]
+    },
+    {
+      "name": "embeds",
+      "type": "array",
+      "description": "Any embedded content",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "embed"
+        }
+      ]
+    },
+    {
+      "name": "reactions",
+      "type": "array",
+      "description": "Reactions to the message",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "reaction"
+        }
+      ]
+    },
+    {
+      "name": "nonce",
+      "type": "string",
+      "description": "Used for validating a message was sent",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "pinned",
+      "type": "boolean",
+      "description": "Whether this message is pinned",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "webhook_id",
+      "type": "string",
+      "description": "If the message is generated by a webhook, this is the webhook's id",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "[type of message](https://discord.com/developers/docs/resources/channel#message-object-message-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "activity",
+      "type": "object",
+      "description": "Sent with Rich Presence-related chat embeds",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "message_activity"
+    },
+    {
+      "name": "application",
+      "type": "object",
+      "description": "Sent with Rich Presence-related chat embeds",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "application"
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "If the message is an [Interaction](https://discord.com/developers/docs/interactions/receiving-and-responding#) or application-owned webhook, this is the id of the application",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "message_reference",
+      "type": "object",
+      "description": "Data showing the source of a crosspost, channel follow add, pin, or reply message",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "message_reference"
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "[message flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) combined as a [bitfield](https://en.wikipedia.org/wiki/Bit_field)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "referenced_message",
+      "type": "object",
+      "description": "The message associated with the message_reference",
+      "optional": true,
+      "isNullable": true,
+      "object_reference": "message"
+    },
+    {
+      "name": "interaction",
+      "type": "object",
+      "description": "Sent if the message is a response to an [Interaction](https://discord.com/developers/docs/interactions/receiving-and-responding#)",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "message_interaction"
+    },
+    {
+      "name": "thread",
+      "type": "object",
+      "description": "The thread that was started from this message, includes [thread member](https://discord.com/developers/docs/resources/channel#thread-member-object) object",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "channel"
+    },
+    {
+      "name": "components",
+      "type": "array",
+      "description": "Sent if the message contains components like buttons, action rows, or other interactive components",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "message_component",
+          "name": "action_row"
+        }
+      ]
+    },
+    {
+      "name": "sticker_items",
+      "type": "array",
+      "description": "Sent if the message contains stickers",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "message_sticker_item"
+        }
+      ]
+    },
+    {
+      "name": "stickers",
+      "type": "array",
+      "description": "**Deprecated** the stickers sent with the message",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "sticker"
+        }
+      ]
+    },
+    {
+      "name": "position",
+      "type": "integer",
+      "description": "A generally increasing integer (there may be gaps or duplicates) that represents the approximate position of the message in a thread, it can be used to estimate the relative position of the message in a thread in company with `total_message_sent` on parent thread",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "role_subscription_data",
+      "type": "object",
+      "description": "Data of the role subscription purchase or renewal that prompted this ROLE_SUBSCRIPTION_PURCHASE message",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "role_subscription_data"
+    }
+  ],
+  "message_activity": [
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "[type of message activity](https://discord.com/developers/docs/resources/channel#message-object-message-activity-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "party_id",
+      "type": "string",
+      "description": "Party_id from a [Rich Presence event](https://discord.com/developers/docs/rich-presence/how-to#updating-presence-update-presence-payload-fields)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "message_reference": [
+    {
+      "name": "message_id",
+      "type": "string",
+      "description": "Id of the originating message",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "Id of the originating message's channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "Id of the originating message's guild",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "fail_if_not_exists",
+      "type": "boolean",
+      "description": "When sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "followed_channel": [
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "Source channel id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "webhook_id",
+      "type": "string",
+      "description": "Created target webhook id",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "reaction": [
+    {
+      "name": "count",
+      "type": "integer",
+      "description": "Times this emoji has been used to react",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "me",
+      "type": "boolean",
+      "description": "Whether the current user reacted using this emoji",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "emoji",
+      "type": "object",
+      "description": "Emoji information",
+      "optional": false,
+      "isNullable": false,
+      "partial_object_reference": "emoji"
+    }
+  ],
+  "overwrite": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Role or user id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "Either 0 (role) or 1 (member)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "allow",
+      "type": "string",
+      "description": "Permission bit set",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "deny",
+      "type": "string",
+      "description": "Permission bit set",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "thread_metadata": [
+    {
+      "name": "archived",
+      "type": "boolean",
+      "description": "Whether the thread is archived",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "auto_archive_duration",
+      "type": "integer",
+      "description": "The thread will stop showing in the channel list after `auto_archive_duration` minutes of inactivity, can be set to: 60, 1440, 4320, 10080",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "archive_timestamp",
+      "type": "string",
+      "description": "Timestamp when the thread's archive status was last changed, used for calculating recent activity",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "locked",
+      "type": "boolean",
+      "description": "Whether the thread is locked; when a thread is locked, only users with MANAGE_THREADS can unarchive it",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "invitable",
+      "type": "boolean",
+      "description": "Whether non-moderators can add other non-moderators to a thread; only available on private threads",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "create_timestamp",
+      "type": "string",
+      "description": "Timestamp when the thread was created; only populated for threads created after 2022-01-09",
+      "optional": true,
+      "isNullable": true
+    }
+  ],
+  "thread_member": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the thread",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "description": "ID of the user",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "join_timestamp",
+      "type": "string",
+      "description": "Time the user last joined the thread",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "Any user-thread settings, currently only used for notifications",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "Additional information about the user",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "guild_member"
+    }
+  ],
+  "default_reaction": [
+    {
+      "name": "emoji_id",
+      "type": "string",
+      "description": "The id of a guild's custom emoji",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "emoji_name",
+      "type": "string",
+      "description": "The unicode character of the emoji",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "forum_tag": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of the tag",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the tag (0-20 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "moderated",
+      "type": "boolean",
+      "description": "Whether this tag can only be added to or removed from threads by a member with the `MANAGE_THREADS` permission",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "emoji_id",
+      "type": "string",
+      "description": "The id of a guild's custom emoji \\*",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "emoji_name",
+      "type": "string",
+      "description": "The unicode character of the emoji \\*",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "embed": [
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Title of embed",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "[type of embed](https://discord.com/developers/docs/resources/channel#embed-object-embed-types) (always \"rich\" for webhook embeds)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description of embed",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Url of embed",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "timestamp",
+      "type": "string",
+      "description": "Timestamp of embed content",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "color",
+      "type": "integer",
+      "description": "Color code of the embed",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "footer",
+      "type": "object",
+      "description": "Footer information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_footer"
+    },
+    {
+      "name": "image",
+      "type": "object",
+      "description": "Image information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_image"
+    },
+    {
+      "name": "thumbnail",
+      "type": "object",
+      "description": "Thumbnail information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_thumbnail"
+    },
+    {
+      "name": "video",
+      "type": "object",
+      "description": "Video information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_video"
+    },
+    {
+      "name": "provider",
+      "type": "object",
+      "description": "Provider information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_provider"
+    },
+    {
+      "name": "author",
+      "type": "object",
+      "description": "Author information",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "embed_author"
+    },
+    {
+      "name": "fields",
+      "type": "array",
+      "description": "Fields information",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "embed_field"
+        }
+      ]
+    }
+  ],
+  "embed_thumbnail": [
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Source url of thumbnail (only supports http(s) and attachments)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_url",
+      "type": "string",
+      "description": "A proxied url of the thumbnail",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "height",
+      "type": "integer",
+      "description": "Height of thumbnail",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "width",
+      "type": "integer",
+      "description": "Width of thumbnail",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_video": [
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Source url of video",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_url",
+      "type": "string",
+      "description": "A proxied url of the video",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "height",
+      "type": "integer",
+      "description": "Height of video",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "width",
+      "type": "integer",
+      "description": "Width of video",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_image": [
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Source url of image (only supports http(s) and attachments)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_url",
+      "type": "string",
+      "description": "A proxied url of the image",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "height",
+      "type": "integer",
+      "description": "Height of image",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "width",
+      "type": "integer",
+      "description": "Width of image",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_provider": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of provider",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Url of provider",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_author": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of author",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Url of author (only supports http(s))",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "icon_url",
+      "type": "string",
+      "description": "Url of author icon (only supports http(s) and attachments)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_icon_url",
+      "type": "string",
+      "description": "A proxied url of author icon",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_footer": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Footer text",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon_url",
+      "type": "string",
+      "description": "Url of footer icon (only supports http(s) and attachments)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_icon_url",
+      "type": "string",
+      "description": "A proxied url of footer icon",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "embed_field": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the field",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Value of the field",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "inline",
+      "type": "boolean",
+      "description": "Whether or not this field should display inline",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "attachment": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Attachment id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "filename",
+      "type": "string",
+      "description": "Name of file attached",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description for the file (max 1024 characters)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "content_type",
+      "type": "string",
+      "description": "The attachment's [media type](https://en.wikipedia.org/wiki/Media_type)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "size",
+      "type": "integer",
+      "description": "Size of file in bytes",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "Source url of file",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "proxy_url",
+      "type": "string",
+      "description": "A proxied url of file",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "height",
+      "type": "integer",
+      "description": "Height of file (if image)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "width",
+      "type": "integer",
+      "description": "Width of file (if image)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "ephemeral",
+      "type": "boolean",
+      "description": "Whether this attachment is ephemeral",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "duration_secs",
+      "type": "float",
+      "description": "The duration of the audio file (currently for voice messages)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "waveform",
+      "type": "string",
+      "description": "Base64 encoded bytearray representing a sampled waveform (currently for voice messages)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "channel_mention": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "Id of the guild containing the channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "The [type of channel](https://discord.com/developers/docs/resources/channel#channel-object-channel-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the channel",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "allowed_mention": [
+    {
+      "name": "parse",
+      "type": "array",
+      "description": "An array of [allowed mention types](https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mention-types) to parse from the content.",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "any",
+          "enum_reference": "allowed_mention"
+        }
+      ]
+    },
+    {
+      "name": "roles",
+      "type": "array",
+      "description": "Array of role_ids to mention (Max size of 100)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "type": "array",
+      "description": "Array of user_ids to mention (Max size of 100)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "replied_user",
+      "type": "boolean",
+      "description": "For replies, whether to mention the author of the message being replied to (default false)",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "role_subscription_data": [
+    {
+      "name": "role_subscription_listing_id",
+      "type": "string",
+      "description": "The id of the sku and listing that the user is subscribed to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "tier_name",
+      "type": "string",
+      "description": "The name of the tier that the user is subscribed to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "total_months_subscribed",
+      "type": "integer",
+      "description": "The cumulative number of months that the user has been subscribed for",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "is_renewal",
+      "type": "boolean",
+      "description": "Whether this notification is for a renewal rather than a new purchase",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "forum_thread_message_param": [
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Message contents (up to 2000 characters)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "embeds",
+      "type": "array",
+      "description": "Up to 10 `rich` embeds (up to 6000 characters)",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "embed"
+        }
+      ]
+    },
+    {
+      "name": "allowed_mentions",
+      "type": "object",
+      "description": "Allowed mentions for the message",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "allowed_mention"
+    },
+    {
+      "name": "components",
+      "type": "array",
+      "description": "Components to include with the message",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "message_component",
+          "name": "action_row"
+        }
+      ]
+    },
+    {
+      "name": "sticker_ids",
+      "type": "array",
+      "description": "IDs of up to 3 [stickers](https://discord.com/developers/docs/resources/sticker#sticker-object) in the server to send in the message",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "files",
+      "type": "array",
+      "description": "Contents of the file being sent\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "name": "attachment",
+          "type": "object",
+          "schema": [
+            {
+              "name": "filename",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "file",
+              "type": "buffer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "payload_json",
+      "type": "string",
+      "description": "JSON-encoded body of non-file params, only for `multipart/form-data` requests\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "attachments",
+      "type": "array",
+      "description": "Attachment objects with `filename` and `description`\nSee [Uploading Files](https://discord.com/developers/docs/reference#uploading-files)",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "attachment"
+        }
+      ]
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "[Message flags](https://discord.com/developers/docs/resources/channel#message-object-message-flags) combined as a [bitfield](https://en.wikipedia.org/wiki/Bit_field) (only `SUPPRESS_EMBEDS` and `SUPPRESS_NOTIFICATIONS` can be set)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "emoji": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "[emoji id](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Emoji name",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "roles",
+      "type": "array",
+      "description": "Roles allowed to use this emoji",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User that created this emoji",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "require_colons",
+      "type": "boolean",
+      "description": "Whether this emoji must be wrapped in colons",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "managed",
+      "type": "boolean",
+      "description": "Whether this emoji is managed",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "description": "Whether this emoji is animated",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "available",
+      "type": "boolean",
+      "description": "Whether this emoji can be used, may be false due to loss of Server Boosts",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "guild": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Guild id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Guild name (2-100 characters, excluding trailing and leading whitespace)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "[icon hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "icon_hash",
+      "type": "string",
+      "description": "[icon hash](https://discord.com/developers/docs/reference#image-formatting), returned when in the template object",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "splash",
+      "type": "string",
+      "description": "[splash hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "discovery_splash",
+      "type": "string",
+      "description": "[discovery splash hash](https://discord.com/developers/docs/reference#image-formatting); only present for guilds with the \"DISCOVERABLE\" feature",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "owner",
+      "type": "boolean",
+      "description": "True if [the user](https://discord.com/developers/docs/resources/user#get-current-user-guilds) is the owner of the guild",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "owner_id",
+      "type": "string",
+      "description": "Id of owner",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "string",
+      "description": "Total permissions for [the user](https://discord.com/developers/docs/resources/user#get-current-user-guilds) in the guild (excludes overwrites)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "region",
+      "type": "string",
+      "description": "[voice region](#https://discord.com/developers/docs/resources/voicevoice-region-object) id for the guild (deprecated)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "afk_channel_id",
+      "type": "string",
+      "description": "Id of afk channel",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "afk_timeout",
+      "type": "integer",
+      "description": "Afk timeout in seconds",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "widget_enabled",
+      "type": "boolean",
+      "description": "True if the server widget is enabled",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "widget_channel_id",
+      "type": "string",
+      "description": "The channel id that the widget will generate an invite to, or `null` if set to no invite",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "verification_level",
+      "type": "integer",
+      "description": "[verification level](https://discord.com/developers/docs/resources/guild#guild-object-verification-level) required for the guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "default_message_notifications",
+      "type": "integer",
+      "description": "Default [message notifications level](https://discord.com/developers/docs/resources/guild#guild-object-default-message-notification-level)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "explicit_content_filter",
+      "type": "integer",
+      "description": "[explicit content filter level](https://discord.com/developers/docs/resources/guild#guild-object-explicit-content-filter-level)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "roles",
+      "type": "array",
+      "description": "Roles in the guild",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "role"
+        }
+      ]
+    },
+    {
+      "name": "emojis",
+      "type": "array",
+      "description": "Custom guild emojis",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "emoji"
+        }
+      ]
+    },
+    {
+      "name": "features",
+      "type": "array",
+      "description": "Enabled guild features",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string",
+          "enum_reference": "guild_feature"
+        }
+      ]
+    },
+    {
+      "name": "mfa_level",
+      "type": "integer",
+      "description": "Required [MFA level](https://discord.com/developers/docs/resources/guild#guild-object-mfa-level) for the guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "Application id of the guild creator if it is bot-created",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "system_channel_id",
+      "type": "string",
+      "description": "The id of the channel where guild notices such as welcome messages and boost events are posted",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "system_channel_flags",
+      "type": "integer",
+      "description": "[system channel flags](https://discord.com/developers/docs/resources/guild#guild-object-system-channel-flags)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "rules_channel_id",
+      "type": "string",
+      "description": "The id of the channel where Community guilds can display rules and/or guidelines",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "max_presences",
+      "type": "integer",
+      "description": "The maximum number of presences for the guild (`null` is always returned, apart from the largest of guilds)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "max_members",
+      "type": "integer",
+      "description": "The maximum number of members for the guild",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "vanity_url_code",
+      "type": "string",
+      "description": "The vanity url code for the guild",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description of a guild",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "banner",
+      "type": "string",
+      "description": "[banner hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "premium_tier",
+      "type": "integer",
+      "description": "[premium tier](https://discord.com/developers/docs/resources/guild#guild-object-premium-tier) (Server Boost level)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "premium_subscription_count",
+      "type": "integer",
+      "description": "The number of boosts this guild currently has",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "preferred_locale",
+      "type": "string",
+      "description": "The preferred [locale](https://discord.com/developers/docs/reference#locales) of a Community guild; used in server discovery and notices from Discord, and sent in interactions; defaults to \"en-US\"",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "public_updates_channel_id",
+      "type": "string",
+      "description": "The id of the channel where admins and moderators of Community guilds receive notices from Discord",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "max_video_channel_users",
+      "type": "integer",
+      "description": "The maximum amount of users in a video channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "max_stage_video_channel_users",
+      "type": "integer",
+      "description": "The maximum amount of users in a stage video channel",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "approximate_member_count",
+      "type": "integer",
+      "description": "Approximate number of members in this guild, returned from the `GET /guilds/<id>` endpoint when `with_counts` is `true`",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "approximate_presence_count",
+      "type": "integer",
+      "description": "Approximate number of non-offline members in this guild, returned from the `GET /guilds/<id>` endpoint when `with_counts` is `true`",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "welcome_screen",
+      "type": "object",
+      "description": "The welcome screen of a Community guild, shown to new members, returned in an [Invite](https://discord.com/developers/docs/resources/invite#invite-object)'s guild object",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "welcome_screen"
+    },
+    {
+      "name": "nsfw_level",
+      "type": "integer",
+      "description": "[guild NSFW level](https://discord.com/developers/docs/resources/guild#guild-object-guild-nsfw-level)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "stickers",
+      "type": "array",
+      "description": "Custom guild stickers",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "sticker"
+        }
+      ]
+    },
+    {
+      "name": "premium_progress_bar_enabled",
+      "type": "boolean",
+      "description": "Whether the guild has the boost progress bar enabled",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "safety_alerts_channel_id",
+      "type": "string",
+      "description": "The id of the channel where admins and moderators of Community guilds receive safety alerts from Discord",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "guild_preview": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Guild id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Guild name (2-100 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "[icon hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "splash",
+      "type": "string",
+      "description": "[splash hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "discovery_splash",
+      "type": "string",
+      "description": "[discovery splash hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "emojis",
+      "type": "array",
+      "description": "Custom guild emojis",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "emoji"
+        }
+      ]
+    },
+    {
+      "name": "features",
+      "type": "array",
+      "description": "Enabled guild features",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string",
+          "enum_reference": "guild_feature"
+        }
+      ]
+    },
+    {
+      "name": "approximate_member_count",
+      "type": "integer",
+      "description": "Approximate number of members in this guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "approximate_presence_count",
+      "type": "integer",
+      "description": "Approximate number of online members in this guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description for the guild",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "stickers",
+      "type": "array",
+      "description": "Custom guild stickers",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "sticker"
+        }
+      ]
+    }
+  ],
+  "guild_widget_setting": [
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "Whether the widget is enabled",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The widget channel id",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "guild_widget": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Guild id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Guild name (2-100 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "instant_invite",
+      "type": "string",
+      "description": "Instant invite for the guilds specified widget invite channel",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "channels",
+      "type": "array",
+      "description": "Voice and stage channels which are accessible by @everyone",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "channel"
+        }
+      ]
+    },
+    {
+      "name": "members",
+      "type": "array",
+      "description": "Special widget user objects that includes users presence (Limit 100)",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "user"
+        }
+      ]
+    },
+    {
+      "name": "presence_count",
+      "type": "integer",
+      "description": "Number of online members in this guild",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "guild_member": [
+    {
+      "name": "user",
+      "type": "object",
+      "description": "The user this guild member represents",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "nick",
+      "type": "string",
+      "description": "This user's guild nickname",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "avatar",
+      "type": "string",
+      "description": "The member's [guild avatar hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "roles",
+      "type": "array",
+      "description": "Array of [role](https://discord.com/developers/docs/topics/permissions#role-object) object ids",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "joined_at",
+      "type": "string",
+      "description": "When the user joined the guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "premium_since",
+      "type": "string",
+      "description": "When the user started [boosting](https://support.discord.com/hc/en-us/articles/360028038352-Server-Boosting-) the guild",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "deaf",
+      "type": "boolean",
+      "description": "Whether the user is deafened in voice channels",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mute",
+      "type": "boolean",
+      "description": "Whether the user is muted in voice channels",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "[guild member flags](https://discord.com/developers/docs/resources/guild#guild-member-object-guild-member-flags) represented as a bit set, defaults to `0`",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "pending",
+      "type": "boolean",
+      "description": "Whether the user has not yet passed the guild's [Membership Screening](https://discord.com/developers/docs/resources/guild#membership-screening-object) requirements",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "string",
+      "description": "Total permissions of the member in the channel, including overwrites, returned when in the interaction object",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "communication_disabled_until",
+      "type": "string",
+      "description": "When the user's [timeout](https://support.discord.com/hc/en-us/articles/4413305239191-Time-Out-FAQ) will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out",
+      "optional": true,
+      "isNullable": true
+    }
+  ],
+  "integration": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Integration id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Integration name",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Integration type (twitch, youtube, discord, or guild_subscription)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "Is this integration enabled",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "syncing",
+      "type": "boolean",
+      "description": "Is this integration syncing",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "role_id",
+      "type": "string",
+      "description": "Id that this integration uses for \"subscribers\"",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "enable_emoticons",
+      "type": "boolean",
+      "description": "Whether emoticons should be synced for this integration (twitch only currently)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "expire_behavior",
+      "type": "any",
+      "description": "The behavior of expiring subscribers",
+      "optional": true,
+      "isNullable": false,
+      "enum_reference": "integration_expire_behavior"
+    },
+    {
+      "name": "expire_grace_period",
+      "type": "integer",
+      "description": "The grace period (in days) before expiring subscribers",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User for this integration",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "account",
+      "type": "object",
+      "description": "Integration account information",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "account"
+    },
+    {
+      "name": "synced_at",
+      "type": "string",
+      "description": "When this integration was last synced",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "subscriber_count",
+      "type": "integer",
+      "description": "How many subscribers this integration has",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "revoked",
+      "type": "boolean",
+      "description": "Has this integration been revoked",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "application",
+      "type": "object",
+      "description": "The bot/OAuth2 application for discord integrations",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "application"
+    },
+    {
+      "name": "scopes",
+      "type": "array",
+      "description": "The scopes the application has been authorized for",
+      "optional": true,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string",
+          "enum_reference": "oauth2_scope"
+        }
+      ]
+    }
+  ],
+  "integration_account": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the account",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the account",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "integration_application": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "The [icon hash](https://discord.com/developers/docs/reference#image-formatting) of the app",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description of the app",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "bot",
+      "type": "object",
+      "description": "The bot associated with this application",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    }
+  ],
+  "ban": [
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "The reason for the ban",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "The banned user",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "user"
+    }
+  ],
+  "welcome_screen": [
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The server description shown in the welcome screen",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "welcome_channels",
+      "type": "array",
+      "description": "The channels shown in the welcome screen, up to 5",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "welcome_screen_channel"
+        }
+      ]
+    }
+  ],
+  "welcome_screen_channel": [
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The channel's id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description shown for the channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "emoji_id",
+      "type": "string",
+      "description": "The [emoji id](https://discord.com/developers/docs/reference#image-formatting), if the emoji is custom",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "emoji_name",
+      "type": "string",
+      "description": "The emoji name if custom, the unicode character if standard, or `null` if no emoji is set",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "guild_onboarding": [
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "ID of the guild this onboarding is part of",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "prompts",
+      "type": "array",
+      "description": "Prompts shown during onboarding and in customize community",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "onboarding_prompt"
+        }
+      ]
+    },
+    {
+      "name": "default_channel_ids",
+      "type": "array",
+      "description": "Channel IDs that members get opted into automatically",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "description": "Whether onboarding is enabled in the guild",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "onboarding_prompt": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the prompt",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "any",
+      "description": "Type of prompt",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "prompt"
+    },
+    {
+      "name": "options",
+      "type": "array",
+      "description": "Options available within the prompt",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "prompt_option"
+        }
+      ]
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Title of the prompt",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "single_select",
+      "type": "boolean",
+      "description": "Indicates whether users are limited to selecting one option for the prompt",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "Indicates whether the prompt is required before a user completes the onboarding flow",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "in_onboarding",
+      "type": "boolean",
+      "description": "Indicates whether the prompt is present in the onboarding flow\nIf `false`, the prompt will only appear in the Channels & Roles tab",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "prompt_option": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "ID of the prompt option",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_ids",
+      "type": "array",
+      "description": "IDs for channels a member is added to when the option is selected",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "role_ids",
+      "type": "array",
+      "description": "IDs for roles assigned to a member when the option is selected",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "emoji",
+      "type": "object",
+      "description": "Emoji of the option",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "emoji"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Title of the option",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description of the option",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "guild_scheduled_event": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of the scheduled event",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The guild id which the scheduled event belongs to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The channel id in which the scheduled event will be hosted, or `null` if [scheduled entity type](https://discord.com/developers/docs/resources/guild-scheduled-event#guild-scheduled-event-object-guild-scheduled-event-entity-types) is `EXTERNAL`",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "creator_id",
+      "type": "string",
+      "description": "The id of the user that created the scheduled event *",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the scheduled event (1-100 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description of the scheduled event (1-1000 characters)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "scheduled_start_time",
+      "type": "string",
+      "description": "The time the scheduled event will start",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "scheduled_end_time",
+      "type": "string",
+      "description": "The time the scheduled event will end, required if entity_type is `EXTERNAL`",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "privacy_level",
+      "type": "integer",
+      "description": "The privacy level of the scheduled event",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "guild_scheduled_event_privacy_level"
+    },
+    {
+      "name": "status",
+      "type": "any",
+      "description": "The status of the scheduled event",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "guild_scheduled_event_status"
+    },
+    {
+      "name": "entity_type",
+      "type": "any",
+      "description": "The type of the scheduled event",
+      "optional": false,
+      "isNullable": false,
+      "enum_reference": "scheduled_entity"
+    },
+    {
+      "name": "entity_id",
+      "type": "string",
+      "description": "The id of an entity associated with a guild scheduled event",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "entity_metadata",
+      "type": "object",
+      "description": "Additional metadata for the guild scheduled event",
+      "optional": false,
+      "isNullable": true,
+      "object_reference": "entity_metadata"
+    },
+    {
+      "name": "creator",
+      "type": "object",
+      "description": "The user that created the scheduled event",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "user_count",
+      "type": "integer",
+      "description": "The number of users subscribed to the scheduled event",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "The [cover image hash](https://discord.com/developers/docs/reference#image-formatting) of the scheduled event",
+      "optional": true,
+      "isNullable": true
+    }
+  ],
+  "guild_scheduled_event_entity_metadata": [
+    {
+      "name": "location",
+      "type": "string",
+      "description": "Location of the event (1-100 characters)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "guild_scheduled_event_user": [
+    {
+      "name": "guild_scheduled_event_id",
+      "type": "string",
+      "description": "The scheduled event id which the user subscribed to",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User which subscribed to an event",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "Guild member data for this user for the guild which this event belongs to, if any",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "guild_member"
+    }
+  ],
+  "guild_template": [
+    {
+      "name": "code",
+      "type": "string",
+      "description": "The template code (unique ID)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Template name",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description for the template",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "usage_count",
+      "type": "integer",
+      "description": "Number of times this template has been used",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "creator_id",
+      "type": "string",
+      "description": "The ID of the user who created the template",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "creator",
+      "type": "object",
+      "description": "The user who created the template",
+      "optional": false,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "created_at",
+      "type": "string",
+      "description": "When this template was created",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "updated_at",
+      "type": "string",
+      "description": "When this template was last synced to the source guild",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "source_guild_id",
+      "type": "string",
+      "description": "The ID of the guild this template is based on",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "serialized_source_guild",
+      "type": "object",
+      "description": "The guild snapshot this template contains",
+      "optional": false,
+      "isNullable": false,
+      "partial_object_reference": "guild"
+    },
+    {
+      "name": "is_dirty",
+      "type": "boolean",
+      "description": "Whether the template has unsynced changes",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "invite": [
+    {
+      "name": "code",
+      "type": "string",
+      "description": "The invite code (unique ID)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild",
+      "type": "object",
+      "description": "The guild this invite is for",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "guild"
+    },
+    {
+      "name": "channel",
+      "type": "object",
+      "description": "The channel this invite is for",
+      "optional": false,
+      "isNullable": true,
+      "partial_object_reference": "channel"
+    },
+    {
+      "name": "inviter",
+      "type": "object",
+      "description": "The user who created the invite",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "target_type",
+      "type": "integer",
+      "description": "The [type of target](https://discord.com/developers/docs/resources/invite#invite-object-invite-target-types) for this voice channel invite",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "target_user",
+      "type": "object",
+      "description": "The user whose stream to display for this voice channel stream invite",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "target_application",
+      "type": "object",
+      "description": "The embedded application to open for this voice channel embedded application invite",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "application"
+    },
+    {
+      "name": "approximate_presence_count",
+      "type": "integer",
+      "description": "Approximate count of online members, returned from the `GET /invites/<code>` endpoint when `with_counts` is `true`",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "approximate_member_count",
+      "type": "integer",
+      "description": "Approximate count of total members, returned from the `GET /invites/<code>` endpoint when `with_counts` is `true`",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "expires_at",
+      "type": "string",
+      "description": "The expiration date of this invite, returned from the `GET /invites/<code>` endpoint when `with_expiration` is `true`",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "stage_instance",
+      "type": "object",
+      "description": "Stage instance data if there is a [public Stage instance](#DOCS_RESOURCES_STAGE_INSTANCE) in the Stage channel this invite is for (deprecated)",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "invite_stage_instance"
+    },
+    {
+      "name": "guild_scheduled_event",
+      "type": "object",
+      "description": "Guild scheduled event data, only included if `guild_scheduled_event_id` contains a valid guild scheduled event id",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "guild_scheduled_event"
+    }
+  ],
+  "invite_metadata": [
+    {
+      "name": "uses",
+      "type": "integer",
+      "description": "Number of times this invite has been used",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "max_uses",
+      "type": "integer",
+      "description": "Max number of times this invite can be used",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "max_age",
+      "type": "integer",
+      "description": "Duration (in seconds) after which the invite expires",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "temporary",
+      "type": "boolean",
+      "description": "Whether this invite only grants temporary membership",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "created_at",
+      "type": "string",
+      "description": "When this invite was created",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "invite_stage_instance": [
+    {
+      "name": "members",
+      "type": "array",
+      "description": "The members speaking in the Stage",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "partial_object_reference": "guild_member"
+        }
+      ]
+    },
+    {
+      "name": "participant_count",
+      "type": "integer",
+      "description": "The number of users in the Stage",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "speaker_count",
+      "type": "integer",
+      "description": "The number of users speaking in the Stage",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "topic",
+      "type": "string",
+      "description": "The topic of the Stage instance (1-120 characters)",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "stage_instance": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of this Stage instance",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The guild id of the associated Stage channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The id of the associated Stage channel",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "topic",
+      "type": "string",
+      "description": "The topic of the Stage instance (1-120 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "privacy_level",
+      "type": "integer",
+      "description": "The [privacy level](https://discord.com/developers/docs/resources/stage-instance#stage-instance-object-privacy-level) of the Stage instance",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "discoverable_disabled",
+      "type": "boolean",
+      "description": "Whether or not Stage Discovery is disabled (deprecated)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_scheduled_event_id",
+      "type": "string",
+      "description": "The id of the scheduled event for this Stage instance",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "sticker": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "[id of the sticker](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "pack_id",
+      "type": "string",
+      "description": "For standard stickers, id of the pack the sticker is from",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the sticker",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description of the sticker",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "tags",
+      "type": "string",
+      "description": "Autocomplete/suggestion tags for the sticker (max 200 characters)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "asset",
+      "type": "string",
+      "description": "**Deprecated** previously the sticker asset hash, now an empty string",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "[type of sticker](https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "format_type",
+      "type": "integer",
+      "description": "[type of sticker format](https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-format-types)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "available",
+      "type": "boolean",
+      "description": "Whether this guild sticker can be used, may be false due to loss of Server Boosts",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "Id of the guild that owns this sticker",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "The user that uploaded the guild sticker",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "sort_value",
+      "type": "integer",
+      "description": "The standard sticker's sort order within its pack",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "sticker_item": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the sticker",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the sticker",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "format_type",
+      "type": "integer",
+      "description": "[type of sticker format](https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-format-types)",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "sticker_pack": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the sticker pack",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "stickers",
+      "type": "array",
+      "description": "The stickers in the pack",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "sticker"
+        }
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the sticker pack",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "sku_id",
+      "type": "string",
+      "description": "Id of the pack's SKU",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "cover_sticker_id",
+      "type": "string",
+      "description": "Id of a sticker in the pack which is shown as the pack's icon",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description of the sticker pack",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "banner_asset_id",
+      "type": "string",
+      "description": "Id of the sticker pack's [banner image](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "response": [
+    {
+      "name": "sticker_packs",
+      "type": "array",
+      "description": "",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "sticker_pack"
+        }
+      ]
+    }
+  ],
+  "user": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The user's id",
+      "required oauth2 scope": "identify",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "description": "The user's username, not unique across the platform",
+      "required oauth2 scope": "identify",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "discriminator",
+      "type": "string",
+      "description": "The user's 4-digit discord-tag",
+      "required oauth2 scope": "identify",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "avatar",
+      "type": "string",
+      "description": "The user's [avatar hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "required oauth2 scope": "identify",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "bot",
+      "type": "boolean",
+      "description": "Whether the user belongs to an OAuth2 application",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "system",
+      "type": "boolean",
+      "description": "Whether the user is an Official Discord System user (part of the urgent message system)",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "mfa_enabled",
+      "type": "boolean",
+      "description": "Whether the user has two factor enabled on their account",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "banner",
+      "type": "string",
+      "description": "The user's [banner hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "accent_color",
+      "type": "integer",
+      "description": "The user's banner color encoded as an integer representation of hexadecimal color code",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "description": "The user's chosen [language option](https://discord.com/developers/docs/reference#locales)",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "verified",
+      "type": "boolean",
+      "description": "Whether the email on this account has been verified",
+      "required oauth2 scope": "email",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "description": "The user's email",
+      "required oauth2 scope": "email",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "flags",
+      "type": "integer",
+      "description": "The [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "premium_type",
+      "type": "integer",
+      "description": "The [type of Nitro subscription](https://discord.com/developers/docs/resources/user#user-object-premium-types) on a user's account",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "public_flags",
+      "type": "integer",
+      "description": "The public [flags](https://discord.com/developers/docs/resources/user#user-object-user-flags) on a user's account",
+      "required oauth2 scope": "identify",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "connection": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id of the connection account",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The username of the connection account",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "The [service](https://discord.com/developers/docs/resources/user#connection-object-services) of this connection",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "revoked",
+      "type": "boolean",
+      "description": "Whether the connection is revoked",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "integrations",
+      "type": "array",
+      "description": "An array of partial [server integrations](https://discord.com/developers/docs/resources/guild#integration-object)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "verified",
+      "type": "boolean",
+      "description": "Whether the connection is verified",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "friend_sync",
+      "type": "boolean",
+      "description": "Whether friend sync is enabled for this connection",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "show_activity",
+      "type": "boolean",
+      "description": "Whether activities related to this connection will be shown in presence updates",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "two_way_link",
+      "type": "boolean",
+      "description": "Whether this connection has a corresponding third party OAuth2 token",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "visibility",
+      "type": "integer",
+      "description": "[visibility](https://discord.com/developers/docs/resources/user#connection-object-visibility-types) of this connection",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "application_role_connection": [
+    {
+      "name": "platform_name",
+      "type": "string",
+      "description": "The vanity name of the platform a bot has connected (max 50 characters)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "platform_username",
+      "type": "string",
+      "description": "The username on the platform a bot has connected (max 100 characters)",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "metadata",
+      "type": "object",
+      "description": "Object mapping [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) keys to their `string`-ified value (max 100 characters) for the user on the platform a bot has connected",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "voice_state": [
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The guild id this voice state is for",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The channel id this user is connected to",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "description": "The user id this voice state is for",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "member",
+      "type": "object",
+      "description": "The guild member this voice state is for",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "guild_member"
+    },
+    {
+      "name": "session_id",
+      "type": "string",
+      "description": "The session id for this voice state",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "deaf",
+      "type": "boolean",
+      "description": "Whether this user is deafened by the server",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mute",
+      "type": "boolean",
+      "description": "Whether this user is muted by the server",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "self_deaf",
+      "type": "boolean",
+      "description": "Whether this user is locally deafened",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "self_mute",
+      "type": "boolean",
+      "description": "Whether this user is locally muted",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "self_stream",
+      "type": "boolean",
+      "description": "Whether this user is streaming using \"Go Live\"",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "self_video",
+      "type": "boolean",
+      "description": "Whether this user's camera is enabled",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "suppress",
+      "type": "boolean",
+      "description": "Whether this user's permission to speak is denied",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "request_to_speak_timestamp",
+      "type": "string",
+      "description": "The time at which the user requested to speak",
+      "optional": false,
+      "isNullable": true
+    }
+  ],
+  "voice_region": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique ID for the region",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the region",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "optimal",
+      "type": "boolean",
+      "description": "True for a single server that is closest to the current user's client",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "deprecated",
+      "type": "boolean",
+      "description": "Whether this is a deprecated voice region (avoid switching to these)",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "custom",
+      "type": "boolean",
+      "description": "Whether this is a custom voice region (used for events/etc)",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "webhook": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The id of the webhook",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "description": "The [type](https://discord.com/developers/docs/resources/webhook#webhook-object-webhook-types) of the webhook",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "guild_id",
+      "type": "string",
+      "description": "The guild id this webhook is for, if any",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "channel_id",
+      "type": "string",
+      "description": "The channel id this webhook is for, if any",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "The user this webhook was created by (not returned when getting a webhook with its token)",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "user"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The default name of the webhook",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "avatar",
+      "type": "string",
+      "description": "The default user avatar [hash](https://discord.com/developers/docs/reference#image-formatting) of the webhook",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "token",
+      "type": "string",
+      "description": "The secure token of the webhook (returned for Incoming Webhooks)",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "application_id",
+      "type": "string",
+      "description": "The bot/OAuth2 application that created this webhook",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "source_guild",
+      "type": "object",
+      "description": "The guild of the channel that this webhook is following (returned for Channel Follower Webhooks)",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "guild"
+    },
+    {
+      "name": "source_channel",
+      "type": "object",
+      "description": "The channel that this webhook is following (returned for Channel Follower Webhooks)",
+      "optional": true,
+      "isNullable": false,
+      "partial_object_reference": "channel"
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "description": "The url used for executing the webhook (returned by the [webhooks](https://discord.com/developers/docs/topics/oauth2#webhooks) OAuth2 flow)",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "role": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Role id",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Role name",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "color",
+      "type": "integer",
+      "description": "Integer representation of hexadecimal color code",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "hoist",
+      "type": "boolean",
+      "description": "If this role is pinned in the user listing",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "Role [icon hash](https://discord.com/developers/docs/reference#image-formatting)",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "unicode_emoji",
+      "type": "string",
+      "description": "Role unicode emoji",
+      "optional": true,
+      "isNullable": true
+    },
+    {
+      "name": "position",
+      "type": "integer",
+      "description": "Position of this role",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "string",
+      "description": "Permission bit set",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "managed",
+      "type": "boolean",
+      "description": "Whether this role is managed by an integration",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "mentionable",
+      "type": "boolean",
+      "description": "Whether this role is mentionable",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "tags",
+      "type": "object",
+      "description": "The tags this role has",
+      "optional": true,
+      "isNullable": false,
+      "object_reference": "role_tag"
+    }
+  ],
+  "role_tag": [
+    {
+      "name": "bot_id",
+      "type": "string",
+      "description": "The id of the bot this role belongs to",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "integration_id",
+      "type": "string",
+      "description": "The id of the integration this role belongs to",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "premium_subscriber",
+      "type": "boolean",
+      "description": "Whether this is the guild's Booster role",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "subscription_listing_id",
+      "type": "string",
+      "description": "The id of this role's subscription sku and listing",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "available_for_purchase",
+      "type": "boolean",
+      "description": "Whether this role is available for purchase",
+      "optional": true,
+      "isNullable": false
+    },
+    {
+      "name": "guild_connections",
+      "type": "boolean",
+      "description": "Whether this role is a guild's linked role",
+      "optional": true,
+      "isNullable": false
+    }
+  ],
+  "team": [
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "A hash of the image of the team's icon",
+      "optional": false,
+      "isNullable": true
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The unique id of the team",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "members",
+      "type": "array",
+      "description": "The members of the team",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "object",
+          "object_reference": "team_member"
+        }
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the team",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "owner_user_id",
+      "type": "string",
+      "description": "The user id of the current team owner",
+      "optional": false,
+      "isNullable": false
+    }
+  ],
+  "team_member": [
+    {
+      "name": "membership_state",
+      "type": "integer",
+      "description": "The user's [membership state](https://discord.com/developers/docs/topics/teams#data-models-membership-state-enum) on the team",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "permissions",
+      "type": "array",
+      "description": "Will always be `[\"*\"]`",
+      "optional": false,
+      "isNullable": false,
+      "schema": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "team_id",
+      "type": "string",
+      "description": "The id of the parent team of which they are a member",
+      "optional": false,
+      "isNullable": false
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "The avatar, discriminator, id, and username of the user",
+      "optional": false,
+      "isNullable": false,
+      "partial_object_reference": "user"
+    }
+  ]
+}
