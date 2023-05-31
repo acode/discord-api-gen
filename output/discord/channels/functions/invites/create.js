@@ -23,7 +23,10 @@ module.exports = async (channel_id, max_age, max_uses, temporary, unique, target
   let _pathname = '/channels/{channel_id}/invites';
 
   let _provider = context.providers['discord'] || {};
-  let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {};
+  let _providerAuth = (_provider.AUTH && _provider.AUTH.OAUTH2) || {
+    botToken: process.env.DISCORD_BOT_TOKEN, // for debugging
+    clientId: process.env.DISCORD_CLIENT_ID // for debugging
+  };
   if (!_providerAuth.botToken) { throw new Error('No Discord Auth Token Provided'); }
   if (!_providerAuth.clientId) { throw new Error('No Discord Application ID Provided'); }
 

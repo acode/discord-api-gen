@@ -20,7 +20,10 @@ if (context.params.DISCORD_CLIENT_ID) {
   localEnv.DISCORD_CLIENT_ID = context.params.DISCORD_CLIENT_ID;
 }
 
-if (localEnv.DISCORD_BOT_TOKEN ^ localEnv.DISCORD_CLIENT_ID) {
+if (
+  (localEnv.DISCORD_BOT_TOKEN && !localEnv.DISCORD_CLIENT_ID) ||
+  (!localEnv.DISCORD_BOT_TOKEN && localEnv.DISCORD_CLIENT_ID)
+) {
   throw new Error(`Must provide both "DISCORD_BOT_TOKEN" and "DISCORD_CLIENT_ID" or neither`);
 }
 
