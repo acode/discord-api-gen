@@ -25,7 +25,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "commands",
@@ -123,7 +126,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -150,7 +156,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -247,7 +256,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -274,7 +286,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -294,7 +309,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -329,7 +347,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "commands",
@@ -427,7 +448,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -461,7 +485,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -558,7 +585,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -592,7 +622,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -619,7 +652,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -646,7 +682,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "commands",
@@ -680,7 +719,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -728,7 +770,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "commands",
@@ -755,7 +800,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -782,7 +830,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -809,7 +860,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -836,7 +890,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -863,7 +920,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -890,7 +950,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -924,7 +987,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -958,7 +1024,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "interactions",
@@ -992,47 +1061,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
-  },
-  {
-    "namespace": "application_role_connection_metadata",
-    "name": "roleConnections/metadata/retrieve",
-    "title": "Get Application Role Connection Metadata Records",
-    "method": "GET",
-    "url": "/applications/{application_id}/role-connections/metadata",
-    "description": "Returns a list of [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) objects for the given application.",
-    "pathParams": [
-      {
-        "name": "application_id",
-        "description": "The id of the app",
-        "type": "string",
-        "optional": false,
-        "isNullable": false
-      }
-    ],
-    "queryParams": [],
-    "jsonParams": [],
-    "supports_multipart": false
-  },
-  {
-    "namespace": "application_role_connection_metadata",
-    "name": "roleConnections/metadata/update",
-    "title": "Update Application Role Connection Metadata Records",
-    "method": "PUT",
-    "url": "/applications/{application_id}/role-connections/metadata",
-    "description": "Updates and returns a list of [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) objects for the given application.",
-    "pathParams": [
-      {
-        "name": "application_id",
-        "description": "The id of the app",
-        "type": "string",
-        "optional": false,
-        "isNullable": false
-      }
-    ],
-    "queryParams": [],
-    "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "audit_logs",
@@ -1088,7 +1120,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "auto_moderation",
@@ -1108,7 +1143,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "auto_moderation",
@@ -1135,7 +1173,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "auto_moderation",
@@ -1228,7 +1269,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "auto_moderation",
@@ -1321,7 +1365,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "auto_moderation",
@@ -1348,7 +1395,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1368,7 +1418,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1388,7 +1441,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1408,7 +1464,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1461,7 +1520,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -1488,7 +1550,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1619,7 +1684,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": true
+    "supports_multipart": true,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1646,7 +1714,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1680,7 +1751,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1714,7 +1788,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1755,7 +1832,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1806,7 +1886,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1833,7 +1916,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1867,7 +1953,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1971,7 +2060,10 @@
         ]
       }
     ],
-    "supports_multipart": true
+    "supports_multipart": true,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -1998,7 +2090,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2031,7 +2126,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2080,7 +2178,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2100,7 +2201,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -2174,7 +2278,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2201,7 +2308,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2229,7 +2339,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2249,7 +2362,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2269,7 +2385,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -2296,7 +2415,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2323,7 +2445,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2365,7 +2490,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2392,7 +2520,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2441,7 +2572,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2497,7 +2631,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2559,7 +2696,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2579,7 +2719,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2606,7 +2749,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2626,7 +2772,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2653,7 +2802,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2688,7 +2840,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "channels",
@@ -2730,7 +2885,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -2765,7 +2923,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -2800,7 +2961,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "channels",
@@ -2835,7 +2999,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "emojis",
@@ -2855,7 +3022,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "emojis",
@@ -2882,7 +3052,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "emojis",
@@ -2930,7 +3103,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "emojis",
@@ -2977,7 +3153,10 @@
         ]
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "emojis",
@@ -3004,7 +3183,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3114,7 +3296,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3143,7 +3328,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3163,7 +3351,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3341,7 +3532,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3361,7 +3555,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3381,7 +3578,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -3445,7 +3645,7 @@
         "name": "rate_limit_per_user",
         "type": "integer",
         "description": "Amount of seconds a user has to wait before sending another message (0-21600); bots, as well as users with the permission `manage_messages` or `manage_channel`, are unaffected",
-        "channel type": "Text, Forum",
+        "channel type": "Text, Voice, Stage, Forum",
         "optional": false,
         "isNullable": false
       },
@@ -3543,7 +3743,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3563,7 +3766,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3583,7 +3789,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3610,7 +3819,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3647,11 +3859,14 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
-    "name": "guilds/members/search/retrieve",
+    "name": "guilds/members/search/",
     "title": "Search Guild Members",
     "method": "GET",
     "url": "/guilds/{guild_id}/members/search",
@@ -3683,7 +3898,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3755,7 +3973,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3836,7 +4057,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3865,7 +4089,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3894,7 +4121,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3928,7 +4158,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3962,7 +4195,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -3989,7 +4225,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4034,7 +4273,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -4061,7 +4303,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4105,7 +4350,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4132,7 +4380,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4152,7 +4403,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -4230,7 +4484,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4250,7 +4507,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4328,7 +4588,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4356,7 +4619,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4383,7 +4649,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4420,7 +4689,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4477,7 +4749,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4497,7 +4772,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -4517,7 +4795,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -4537,7 +4818,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guilds",
@@ -4564,7 +4848,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4584,7 +4871,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4604,7 +4894,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4624,7 +4917,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4644,7 +4940,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4673,7 +4972,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4693,7 +4995,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4741,7 +5046,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4761,7 +5069,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4803,7 +5114,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guilds",
@@ -4845,7 +5159,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4873,7 +5190,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4961,7 +5281,10 @@
         "object_reference": "image_data"
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -4996,7 +5319,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5099,7 +5425,10 @@
         "object_reference": "image_data"
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5126,7 +5455,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_scheduled_events",
@@ -5186,7 +5518,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5206,7 +5541,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5242,7 +5580,10 @@
         "object_reference": "image_data"
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5262,7 +5603,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5297,7 +5641,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5324,7 +5671,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5366,7 +5716,10 @@
         "isNullable": true
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "guild_templates",
@@ -5393,7 +5746,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "invites",
@@ -5435,7 +5791,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "invites",
@@ -5455,7 +5814,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stage_instances",
@@ -5496,7 +5858,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stage_instances",
@@ -5516,7 +5881,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stage_instances",
@@ -5551,7 +5919,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stage_instances",
@@ -5571,7 +5942,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stickers",
@@ -5591,7 +5965,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stickers",
@@ -5603,7 +5980,10 @@
     "pathParams": [],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "stickers",
@@ -5623,7 +6003,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "stickers",
@@ -5650,7 +6033,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stickers",
@@ -5670,7 +6056,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stickers",
@@ -5719,7 +6108,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "stickers",
@@ -5746,7 +6138,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5758,7 +6153,10 @@
     "pathParams": [],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5778,7 +6176,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5806,7 +6207,10 @@
         "object_reference": "image_data"
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5818,7 +6222,10 @@
     "pathParams": [],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "users",
@@ -5838,7 +6245,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5858,7 +6268,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5878,7 +6291,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5910,7 +6326,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "users",
@@ -5922,69 +6341,10 @@
     "pathParams": [],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
-  },
-  {
-    "namespace": "users",
-    "name": "users/me/applications/roleConnection/retrieve",
-    "title": "Get User Application Role Connection",
-    "method": "GET",
-    "url": "/users/@me/applications/{application_id}/role-connection",
-    "description": "Returns the [application role connection](https://discord.com/developers/docs/resources/user#application-role-connection-object) for the user\nRequires an OAuth2 access token with `role_connections.write` scope for the application specified in the path.",
-    "pathParams": [
-      {
-        "name": "application_id",
-        "description": "The id of the app",
-        "type": "string",
-        "optional": false,
-        "isNullable": false
-      }
-    ],
-    "queryParams": [],
-    "jsonParams": [],
-    "supports_multipart": false
-  },
-  {
-    "namespace": "users",
-    "name": "users/me/applications/roleConnection/update",
-    "title": "Update User Application Role Connection",
-    "method": "PUT",
-    "url": "/users/@me/applications/{application_id}/role-connection",
-    "description": "Updates and returns the [application role connection](https://discord.com/developers/docs/resources/user#application-role-connection-object) for the user\nRequires an OAuth2 access token with `role_connections.write` scope for the application specified in the path.",
-    "pathParams": [
-      {
-        "name": "application_id",
-        "description": "The id of the app",
-        "type": "string",
-        "optional": false,
-        "isNullable": false
-      }
-    ],
-    "queryParams": [],
-    "jsonParams": [
-      {
-        "name": "platform_name",
-        "type": "string",
-        "description": "The vanity name of the platform a bot has connected (max 50 characters)",
-        "optional": true,
-        "isNullable": false
-      },
-      {
-        "name": "platform_username",
-        "type": "string",
-        "description": "The username on the platform a bot has connected (max 100 characters)",
-        "optional": true,
-        "isNullable": false
-      },
-      {
-        "name": "metadata",
-        "type": "object",
-        "description": "Object mapping [application role connection metadata](https://discord.com/developers/docs/resources/application-role-connection-metadata#application-role-connection-metadata-object) keys to their `string`-ified value (max 100 characters) for the user on the platform a bot has connected",
-        "optional": true,
-        "isNullable": false
-      }
-    ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "voice",
@@ -5996,7 +6356,10 @@
     "pathParams": [],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6016,7 +6379,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6036,7 +6402,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6056,7 +6425,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "array"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6076,7 +6448,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6103,7 +6478,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6146,7 +6524,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6173,7 +6554,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6193,7 +6577,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6220,7 +6607,10 @@
     ],
     "queryParams": [],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6367,7 +6757,10 @@
         "isNullable": false
       }
     ],
-    "supports_multipart": true
+    "supports_multipart": true,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6409,7 +6802,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6451,7 +6847,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6493,7 +6892,10 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6605,7 +7007,10 @@
         ]
       }
     ],
-    "supports_multipart": true
+    "supports_multipart": true,
+    "returns": {
+      "type": "object"
+    }
   },
   {
     "namespace": "webhooks",
@@ -6647,6 +7052,9 @@
       }
     ],
     "jsonParams": [],
-    "supports_multipart": false
+    "supports_multipart": false,
+    "returns": {
+      "type": "object"
+    }
   }
 ]

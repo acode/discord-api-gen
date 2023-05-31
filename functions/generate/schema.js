@@ -1,7 +1,8 @@
 const fs = require('fs');
 
-const readDocs = require('../../helpers/discord/read_docs.js');
-const formatEndpoints = require('../../helpers/discord/format_endpoints.js');
+const readDocs = require('../../helpers/discord/1_read_docs.js');
+const formatEndpoints = require('../../helpers/discord/2_format_endpoints.js');
+const fixEndpoints = require('../../helpers/discord/3_fix_endpoints.js');
 
 const VALID_TYPES = {
   'string': true,
@@ -117,7 +118,8 @@ if (missingEndpointTypes.length) {
 }
 
 let formattedEndpoints = await formatEndpoints(endpoints);
+let fixedEndpoints = await fixEndpoints(formattedEndpoints);
 
-fs.writeFileSync('./output/schema.json', JSON.stringify(formattedEndpoints, null, 2));
+fs.writeFileSync('./output/schema.json', JSON.stringify(fixedEndpoints, null, 2));
 
-return formattedEndpoints;
+return fixedEndpoints;

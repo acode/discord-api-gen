@@ -65,7 +65,7 @@ schema.forEach(endpoint => {
         ? `\n${[].concat.apply([], allParams.map(param => writeParam(param))).join('\n')}`
         : ''
     ),
-    'returns': '\n * @returns {object}',
+    'returns': `\n * @returns {${endpoint.returns ? endpoint.returns.type : 'object'}}`,
     'paramsList': [].concat(
       allParams.map(param => `${param.name}${param.optional ? ' = null' : ''}`),
       'context'

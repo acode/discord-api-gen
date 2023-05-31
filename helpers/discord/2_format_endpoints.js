@@ -16,6 +16,8 @@ function getProperEndpointName (namespace, title, method, path) {
   console.log(`Creating name for ${title}...`);
   if (customActionsByTitle[title]) {
     action = customActionsByTitle[title];
+  } else if (title.startsWith('Search ')) {
+    action = '';
   } else if (title.startsWith('Execute ')) {
     action = 'execute';
   } else if (title.startsWith('Bulk Overwrite ')) {
