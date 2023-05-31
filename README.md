@@ -5,9 +5,9 @@ most recent version of the Discord API docs.
 
 1. [Instructions](#instructions)
 2. [Contributing](#contributing)
-  1. [Endpoint fixes](#endpoint-fixes)
-  2. [Schema improvements](#schema-improvements)
-  3. [Bug fixes](#bug-fixes)
+   1. [Endpoint fixes](#endpoint-fixes)
+   2. [Schema improvements](#schema-improvements)
+   3. [Bug fixes](#bug-fixes)
 3. [Testing endpoints](#testing-endpoints)
 4. [Thank you](#thank-you)
 
