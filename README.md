@@ -11,7 +11,7 @@ most recent version of the Discord API docs.
 3. [Testing endpoints](#testing-endpoints)
 4. [Thank you](#thank-you)
 
-# Instructions
+## Instructions
 
 This repository generates a group of Autocode "Connector APIs", or APIs
 available as integrations, for all documented Discord endpoints based on the
@@ -27,7 +27,7 @@ v10 API documentation. To use this tool;
 6. `$ lib .upload` will run `lib up beta` for each endpoint, you cannot run this
   without admin permissions on the Discord Autocode account - leave for admins.
 
-# Contributing
+## Contributing
 
 There are three places where you can contribute to the making the Discord API
 on Autocode better:
@@ -41,7 +41,7 @@ When submitting a fix, make sure to always run `lib .generate.schema` and
 `lib .generate.code` before submitting a PR, so we can validate that the code
 and schema generated as expected.
 
-## Endpoint fixes
+### Endpoint fixes
 
 Endpoint schemas are generated via `1_read_docs.js`, basically applying regular
 expressions to Discord's API docs on GitHub. There are edge cases regex doesn't
@@ -79,7 +79,7 @@ running `lib .generate.schema`. You can then re-run code generation with
 `lib .generate.code`. The `applyFix()` function should always return an array
 of endpoints.
 
-## Schema improvements
+### Schema improvements
 
 The top-level parameters for most API endpoints are included in API generation.
 However, in `./output/schema.json` you'll notice some parameters have
@@ -92,12 +92,12 @@ Return parameters are not currently documented at all outside of being a
 endpoint (170 endpoints!) and start populating these schemas if possible. A
 change to code generation may be required.
 
-## Bug fixes
+### Bug fixes
 
 Bugs may pop up as you're playing with the endpoints! Please feel free to submit
 PRs that fix these bugs.
 
-# Testing endpoints
+## Testing endpoints
 
 To test endpoints locally without having the Autocode team have to redeploy,
 generate code with:
@@ -111,7 +111,7 @@ You can then go into the directory for the service, e.g. `$ cd ./output/discord/
 and run `$ lib http` to start a local HTTP service. You can make requests
 to this server with the appropriate `application/json` POST data for the parameters.
 
-# Thank you
+## Thank you
 
 Thanks for checking out the Discord API generator for Autocode, together we can
 make the Discord API spec the best there is.
