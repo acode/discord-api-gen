@@ -11,7 +11,7 @@ const io = require('io');
  * @param {string} before Get messages before this message ID
  * @param {string} after Get messages after this message ID
  * @param {integer} limit Max number of messages to return (1-100)
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (channel_id, around = null, before = null, after = null, limit = null, context) => {
 
@@ -32,7 +32,7 @@ module.exports = async (channel_id, around = null, before = null, after = null, 
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

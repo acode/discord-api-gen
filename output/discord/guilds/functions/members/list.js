@@ -6,7 +6,7 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {integer} limit Max number of members to return (1-1000)
  * @param {string} after The highest user id in the previous page
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, limit, after, context) => {
 
@@ -27,7 +27,7 @@ module.exports = async (guild_id, limit, after, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

@@ -5,7 +5,7 @@ const io = require('io');
  * Get a list of all rules currently configured for the guild
  * Returns a list of [auto moderation rule](https://discord.com/developers/docs/resources/auto-moderation#auto-moderation-rule-object) objects for the given guild.
  * @param {string} guild_id Guild id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (guild_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

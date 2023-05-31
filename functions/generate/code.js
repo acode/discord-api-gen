@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 
-const writeCode = require('../../helpers/discord/write_code.js');
-
 const OUTPUT_ROOT = './output/discord';
 const SCHEMA_PATH = './output/schema.json';
 const ENDPOINT_TEMPLATE_PATH = './helpers/discord/templates/endpoint.js';

@@ -6,7 +6,7 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {string} query Query string to match username(s) and nickname(s) against.
  * @param {integer} limit Max number of members to return (1-1000)
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, query, limit, context) => {
 
@@ -27,7 +27,7 @@ module.exports = async (guild_id, query, limit, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

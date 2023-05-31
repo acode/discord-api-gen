@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} channel_id The id of the channel
  * @param {string} before Returns threads before this id
  * @param {integer} limit Optional maximum number of threads to return
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (channel_id, before = null, limit = null, context) => {
 
@@ -28,7 +28,7 @@ module.exports = async (channel_id, before = null, limit = null, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

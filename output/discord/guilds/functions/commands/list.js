@@ -7,7 +7,7 @@ const io = require('io');
  * @param {string} guild_id Guild id
  * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields
  * Default `false`.
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, with_localizations = null, context) => {
 
@@ -28,7 +28,7 @@ module.exports = async (guild_id, with_localizations = null, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

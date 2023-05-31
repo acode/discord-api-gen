@@ -10,7 +10,7 @@ const io = require('io');
  * @param {boolean} with_member Include guild member data if it exists
  * @param {string} before Consider only users before given user id
  * @param {string} after Consider only users after given user id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, guild_scheduled_event_id, limit = null, with_member = null, before = null, after = null, context) => {
 
@@ -32,7 +32,7 @@ module.exports = async (guild_id, guild_scheduled_event_id, limit = null, with_m
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

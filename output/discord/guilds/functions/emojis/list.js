@@ -4,7 +4,7 @@ const io = require('io');
  * List Guild Emojis
  * Returns a list of [emoji](https://discord.com/developers/docs/resources/emoji#emoji-object) objects for the given guild.
  * @param {string} guild_id Guild id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, context) => {
 
@@ -25,7 +25,7 @@ module.exports = async (guild_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

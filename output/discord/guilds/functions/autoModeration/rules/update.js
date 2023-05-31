@@ -38,7 +38,7 @@ module.exports = async (guild_id, auto_moderation_rule_id, name, event_type, tri
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

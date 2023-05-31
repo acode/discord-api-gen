@@ -5,7 +5,7 @@ const io = require('io');
  * Fetches permissions for all commands for your application in a guild
  * Returns an array of [guild application command permissions](https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure) objects.
  * @param {string} guild_id Guild id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (guild_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

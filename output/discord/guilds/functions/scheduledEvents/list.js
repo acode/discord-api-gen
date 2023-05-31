@@ -5,7 +5,7 @@ const io = require('io');
  * Returns a list of [guild scheduled event](https://discord.com/developers/docs/resources/guild-scheduled-event#guild-scheduled-event-object) objects for the given guild.
  * @param {string} guild_id Guild id
  * @param {boolean} with_user_count Include number of users subscribed to each event
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, with_user_count = null, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (guild_id, with_user_count = null, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

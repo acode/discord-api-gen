@@ -8,7 +8,7 @@ const io = require('io');
  * @param {float} limit Number of users to return (up to maximum 1000)
  * @param {string} before Consider only users before given user id
  * @param {string} after Consider only users after given user id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, limit = null, before = null, after = null, context) => {
 
@@ -29,7 +29,7 @@ module.exports = async (guild_id, limit = null, before = null, after = null, con
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

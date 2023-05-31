@@ -4,7 +4,7 @@ const io = require('io');
  * Get Current User Guilds
  * Returns a list of partial [guild](https://discord.com/developers/docs/resources/guild#guild-object) objects the current user is a member of
  * Requires the `guilds` OAuth2 scope.
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (context) => {
 
@@ -25,7 +25,7 @@ module.exports = async (context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

@@ -9,7 +9,7 @@ const io = require('io');
  * @param {string} after Get thread members after this user ID
  * @param {integer} limit Max number of thread members to return (1-100)
  * Defaults to 100.
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (channel_id, with_member = null, after = null, limit = null, context) => {
 
@@ -30,7 +30,7 @@ module.exports = async (channel_id, with_member = null, after = null, limit = nu
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

@@ -74,6 +74,7 @@ function getProperEndpointName (namespace, title, method, path) {
     .slice(1)
     .concat(action).join('/')
     .replace(/\/+/gi, '/') // get rid of double slashes
+    .replace(/\/$/gi, '') // get rid of ending slash if applicable
 
   if (name.startsWith('applications/')) {
     name = name.split('/').slice(1).join('/');

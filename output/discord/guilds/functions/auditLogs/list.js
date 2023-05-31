@@ -11,7 +11,7 @@ const io = require('io');
  * @param {string} before Entries with ID less than a specific audit log entry ID
  * @param {string} after Entries with ID greater than a specific audit log entry ID
  * @param {integer} limit Maximum number of entries (between 1-100) to return, defaults to 50
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, user_id = null, action_type = null, before = null, after = null, limit = null, context) => {
 
@@ -32,7 +32,7 @@ module.exports = async (guild_id, user_id = null, action_type = null, before = n
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

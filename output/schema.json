@@ -3866,7 +3866,7 @@
   },
   {
     "namespace": "guilds",
-    "name": "guilds/members/search/",
+    "name": "guilds/members/search",
     "title": "Search Guild Members",
     "method": "GET",
     "url": "/guilds/{guild_id}/members/search",
@@ -3900,7 +3900,7 @@
     "jsonParams": [],
     "supports_multipart": false,
     "returns": {
-      "type": "object"
+      "type": "array"
     }
   },
   {

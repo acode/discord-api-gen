@@ -5,7 +5,7 @@ const io = require('io');
  * Returns a list of guild [webhook](https://discord.com/developers/docs/resources/webhook#webhook-object) objects
  * Requires the `MANAGE_WEBHOOKS` permission.
  * @param {string} guild_id Guild id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (guild_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

@@ -5,7 +5,7 @@ const io = require('io');
  * Returns a list of [invite](https://discord.com/developers/docs/resources/invite#invite-object) objects (with [invite metadata](https://discord.com/developers/docs/resources/invite#invite-metadata-object)) for the channel
  * Only usable for guild channels. Requires the `MANAGE_CHANNELS` permission.
  * @param {string} channel_id The id of the channel
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (channel_id, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (channel_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

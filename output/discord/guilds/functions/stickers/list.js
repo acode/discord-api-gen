@@ -5,7 +5,7 @@ const io = require('io');
  * Returns an array of [sticker](https://discord.com/developers/docs/resources/sticker#sticker-object) objects for the given guild
  * Includes `user` fields if the bot has the `MANAGE_GUILD_EXPRESSIONS` permission.
  * @param {string} guild_id Guild id
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (guild_id, context) => {
 
@@ -26,7 +26,7 @@ module.exports = async (guild_id, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

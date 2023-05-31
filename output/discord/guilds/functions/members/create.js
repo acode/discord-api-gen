@@ -35,7 +35,7 @@ module.exports = async (guild_id, user_id, access_token, nick, roles, mute, deaf
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;

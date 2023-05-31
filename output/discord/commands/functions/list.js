@@ -6,7 +6,7 @@ const io = require('io');
  * Returns an array of [application command](https://discord.com/developers/docs/interactions/application-commands#application-command-object) objects.
  * @param {boolean} with_localizations Whether to include full localization dictionaries (`name_localizations` and `description_localizations`) in the returned objects, instead of the `name_localized` and `description_localized` fields
  * Default `false`.
- * @returns {object}
+ * @returns {array}
  */
 module.exports = async (with_localizations = null, context) => {
 
@@ -27,7 +27,7 @@ module.exports = async (with_localizations = null, context) => {
     if (!_pathParams[name]) {
       throw new Error(`Missing required parameter: "${name}"`);
     }
-    return _pathParams[name];
+    return encodeURIComponent(_pathParams[name]);
   });
 
   const _url = `https://${process.env.API_URL}/${_pathname}`;
